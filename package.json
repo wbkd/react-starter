@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "lightweight react starterkit with webpack2, redux, react-router",
   "scripts": {
-    "build": "webpack --config webpack/webpack.config.prod.js --colors",
+    "build": "NODE_ENV=production webpack --config webpack/webpack.config.prod.js --colors",
     "start": "NODE_ENV=development webpack-dev-server --config  webpack/webpack.config.dev.js --watch --colors --progress"
   },
   "repository": {
@@ -35,7 +35,10 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "autoprefixer": "^6.6.1",
+    "postcss-loader": "^1.2.2",
     "react": "^15.4.2",
+    "react-dev-utils": "^0.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.0",
