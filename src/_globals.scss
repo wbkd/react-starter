@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Source\+Sans\+Pro:400,600,700,900');
+
+// fonts
+$sansSerif: 'Source Sans Pro', sans-serif;
+
+// colors
+$blu: #0069b4;
+$text: #000000;
+$white: #ffffff;
+
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0px;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+  float: right;
+}
