@@ -2,6 +2,8 @@ import React from 'react';
 
 import * as AppActions from '../../modules/App/AppState';
 
+import './Counter.styl';
+
 const Counter = props => {
   return (
     <div className="counter">

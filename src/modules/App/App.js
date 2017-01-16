@@ -2,6 +2,9 @@ import React from 'react';
 
 import Counter from '../../components/Counter';
 
+import { isOldBrowser } from '../../helper/utils';
+
+import 'normalize.css';
 import './App.styl';
 
 class App extends React.Component {
@@ -13,6 +16,8 @@ class App extends React.Component {
           dispatch={this.props.dispatch}
           counter={this.props.counter}
         />
+
+        {isOldBrowser ? 'Shame!!! Update your Browser!!!' : 'Everything UpToDate'}
       </div>
     );
   }

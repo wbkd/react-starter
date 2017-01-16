@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Source\+Sans\+Pro:400,600,700,900');
+@import 'helper'
+
+// fonts
+$sansSerif = 'Source Sans Pro', sans-serif
+
+/* variables */
+$lightgrey = #999
+$linkColor = #555
+$grey = #777
+$black = #222
+
+html
+button
+input
+select
+textarea
+  color: $black
+
+a
+a:visited
+  color: $linkColor
+  text-decoration: none
+
+a:hover
+  color: lighten($linkColor,10%)
+
+body
+  color: $black
+  font-size: 1em
+  line-height: 1.4
+
+@media only screen and (min-width: 40em)
+  body
+    background: grey
+
+
+@media only screen and (min-width: 80em)
+  body
+    background: black
