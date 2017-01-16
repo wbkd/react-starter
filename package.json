@@ -34,7 +34,9 @@
     "autoprefixer": "^6.6.1",
     "css-loader": "^0.26.1",
     "normalize.css": "^5.0.0",
+    "object-assign": "^4.1.0",
     "postcss-loader": "^1.2.2",
+    "promise": "^7.1.1",
     "react": "^15.4.2",
     "react-dev-utils": "^0.4.2",
     "react-dom": "^15.4.2",
@@ -43,6 +45,7 @@
     "redux": "^3.6.0",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
-    "stylus-loader": "^2.4.0"
+    "stylus-loader": "^2.4.0",
+    "whatwg-fetch": "^2.0.1"
   }
 }

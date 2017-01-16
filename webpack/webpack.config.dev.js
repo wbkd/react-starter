@@ -15,6 +15,7 @@ module.exports = {
     progress: true
   },
   entry: [
+    require.resolve('./polyfills'),
     Path.resolve(__dirname, '../src/index.js')
   ],
   output: {

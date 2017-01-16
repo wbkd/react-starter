@@ -8,6 +8,7 @@ const ExtractCSS = new ExtractTextPlugin('styles/bundle.css');
 module.exports = {
   devtool: 'source-map',
   entry: [
+    require.resolve('./polyfills'),
     Path.resolve(__dirname, '../src/index.js')
   ],
   output: {
