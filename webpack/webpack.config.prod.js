@@ -2,6 +2,7 @@ const Path = require('path');
 const Autoprefixer = require('autoprefixer');
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ExtractCSS = new ExtractTextPlugin('styles/bundle.css');
 
@@ -52,6 +53,9 @@ module.exports = {
         screw_ie8: true
       }
     }),
+    new CopyWebpackPlugin([
+      { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
+    ]),
     ExtractCSS
   ],
   module: {
