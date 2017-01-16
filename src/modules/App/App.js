@@ -1,23 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import Counter from '../../components/Counter';
+import * as AppActions from './AppState';
 
-import { isOldBrowser } from '../../helper/utils';
+import MainView from '../MainView/MainViewContainer';
 
 import 'normalize.css';
 import './App.styl';
 
-class App extends React.Component {
+class App extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(AppActions.loadData());
+  }
 
   render() {
     return (
       <div className="app">
-        <Counter
-          dispatch={this.props.dispatch}
-          counter={this.props.counter}
-        />
-
-        {isOldBrowser ? 'Shame!!! Update your Browser!!!' : 'Everything UpToDate'}
+        <MainView {...this.props}/>
       </div>
     );
   }

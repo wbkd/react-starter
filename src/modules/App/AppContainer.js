@@ -1,22 +1,14 @@
-
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Match } from 'react-router';
 import App from './App';
 
-
-class AppContainer extends PureComponent {
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <Match exactly pattern="/" component={App} />
-        </div>
-      </BrowserRouter>
-    );
-  }
-}
+const AppContainer = props => (
+  <BrowserRouter>
+    <Match exactly pattern="/" render={(matchProps) => <App {...props} {...matchProps} />} />
+  </BrowserRouter>
+);
 
 export default connect(
-  state => ({  ...state.AppState })
+  state => state.AppState
 )(AppContainer);
