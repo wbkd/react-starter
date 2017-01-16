@@ -2,6 +2,7 @@ const Path = require('path');
 const Autoprefixer = require('autoprefixer');
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 
 module.exports = {
@@ -33,7 +34,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: Path.resolve(__dirname, '../src/index.html'),
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
+    ])
   ],
   module: {
     preLoaders: [

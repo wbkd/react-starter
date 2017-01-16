@@ -13,11 +13,11 @@ export function loadData() {
   return dispatch => {
     dispatch({ type: LOAD_START });
 
-    Axios.get('')
+    Axios.get('data/sample.json')
       .then(res => {
         console.log('response', res);
         // here do sth with the data
-        const data = {};
+        const data = res.data || {};
         dispatch({ type: LOAD_SUCCESS, data });
       })
       .catch(error => {
