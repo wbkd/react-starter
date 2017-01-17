@@ -17,6 +17,16 @@ module.exports = {
     filename: 'js/bundle.js'
   },
   plugins: [
+    new Webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+      options: {
+        context: __dirname,
+        postcss: [
+          Autoprefixer
+        ]
+      }
+    }),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -39,6 +49,7 @@ module.exports = {
       }
     }),
     new Webpack.optimize.UglifyJsPlugin({
+      beautify: false,
       sourceMap: true,
       compressor: {
         screw_ie8: true,
@@ -55,14 +66,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
     ]),
-    new Webpack.LoaderOptionsPlugin({
-      options: {
-        context: __dirname,
-        postcss: [
-          Autoprefixer
-        ]
-      }
-    }),
     ExtractCSS
   ],
   module: {
@@ -73,8 +76,8 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.styl$/i,
-        loaders: ExtractCSS.extract(['css-loader', 'postcss-loader', 'stylus-loader'])
+        test: /\.scss$/i,
+        loaders: ExtractCSS.extract(['css-loader', 'postcss-loader', 'sass-loader'])
       },
       {
         test: /\.css$/,

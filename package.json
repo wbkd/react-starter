@@ -35,6 +35,7 @@
     "autoprefixer": "^6.6.1",
     "axios": "^0.15.3",
     "css-loader": "^0.26.1",
+    "node-sass": "^4.3.0",
     "object-assign": "^4.1.0",
     "postcss-loader": "^1.2.2",
     "promise": "^7.1.1",
@@ -45,8 +46,7 @@
     "react-router": "4.0.0-alpha.6",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "style-loader": "^0.13.1",
-    "stylus": "^0.54.5",
+    "sass-loader": "^4.1.1",
     "stylus-loader": "^2.4.0",
     "whatwg-fetch": "^2.0.1"
   }
