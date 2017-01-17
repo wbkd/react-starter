@@ -1,6 +1,6 @@
 # React Starterkit
 
-A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [React Router v4](https://react-router.now.sh/), [SASS](http://sass-lang.com/) and [Webpack v2](https://webpack.js.org/).
+A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [React Router v4](https://react-router.now.sh/), [Sass](http://sass-lang.com/) and [Webpack v2](https://webpack.js.org/).
 
 ## Get the kit
 
@@ -24,7 +24,7 @@ $ npm install
 
 ## Development
 
-Builds the application and starts a webserver with livereload.
+Builds the application and starts a webserver with hot loading.
 Runs on [localhost:3000](http://localhost:3000/)
 
 ```sh
