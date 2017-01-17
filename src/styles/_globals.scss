@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Source\+Sans\+Pro:400,600,700,900');
+@import 'normalize';
 @import 'helper';
 @import 'media';
 
@@ -10,6 +11,7 @@ $lightgrey: #999;
 $linkColor: #555;
 $grey: #777;
 $black: #222;
+$white: #FFF;
 
 html,
 button,
@@ -33,14 +35,14 @@ body {
   font-family: $sansSerif;
   -webkit-font-smoothing: antialiased;
   color: $black;
-  font-size: 1em;
+  font-size: 10px;
   line-height: 1.4;
 
   @include tablet {
-    font-size: 1.5em;
+    font-size: 15px;
   }
 
   @include desktop {
-    font-size: 2em;
+    font-size: 20px;
   }
 }

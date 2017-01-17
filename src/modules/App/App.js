@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import * as AppActions from './AppState';
 
+import Header from '../../components/Header/';
 import MainView from '../MainView/MainViewContainer';
 
-// import 'normalize.css';
 import './App.scss';
 
 class App extends Component {
@@ -16,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <Header />
         <MainView {...this.props}/>
       </div>
     );
