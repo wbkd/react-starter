@@ -2,8 +2,6 @@
  * Here you implement your functions you want to use everywhere in your application.
  * See this functions as an example.
  */
-
-
 const DEBUG = true;
 
 /////////////////////

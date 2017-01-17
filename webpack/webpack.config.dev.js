@@ -40,6 +40,7 @@ module.exports = {
       }
     }),
     new Webpack.HotModuleReplacementPlugin(),
+    // This Webpack plugin ensures npm install <library> forces a project rebuild.
     new WatchMissingNodeModulesPlugin(Path.resolve(__dirname, 'node_modules')),
     new HtmlWebpackPlugin({
       inject: true,
@@ -51,6 +52,8 @@ module.exports = {
       filename: 'index_iframe.html',
       template: Path.resolve(__dirname, '../src/index_iframe.html'),
     }),
+    // copy data folder to make it avaiable in redux loadData action
+    // for sure could be handled with a different webpack configuration
     new CopyWebpackPlugin([
       { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
     ])
