@@ -23,6 +23,17 @@ module.exports = {
     filename: 'js/bundle.js'
   },
   plugins: [
+    new Webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        eslint: {
+          configFile: Path.resolve('./.eslintrc')
+        },
+        postcss: [
+          Autoprefixer
+        ]
+      }
+    }),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')
@@ -42,22 +53,14 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
-    ]),
-    new Webpack.LoaderOptionsPlugin({
-      options: {
-        context: __dirname,
-        postcss: [
-          Autoprefixer
-        ]
-      }
-    })
+    ])
   ],
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
-        use: 'babel-loader'
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css$/,
