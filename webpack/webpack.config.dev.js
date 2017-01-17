@@ -12,8 +12,7 @@ module.exports = {
     contentBase: './build',
     hot: true,
     port: 3000,
-    inline: true,
-    progress: true
+    inline: true
   },
   entry: [
     require.resolve('./polyfills'),
@@ -43,51 +42,31 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
-    ])
+    ]),
+    new Webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss: [
+          Autoprefixer
+        ]
+      }
+    })
   ],
   module: {
-    preLoaders: [
-      {
-        test: /\.(js)$/,
-        loader: 'eslint',
-        exclude: /node_modules/,
-        include: Path.resolve(__dirname, '../src')
-      }
-    ],
-    loaders: [
+    rules: [
       {
         test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015'],
-          cacheDirectory: true
-        }
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
+        use: 'babel-loader'
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css?importLoaders=1', 'postcss']
+        use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader']
       },
       {
         test: /\.styl$/i,
-        loaders: ['style', 'css', 'stylus']
+        use: ['style-loader', 'css-loader', 'stylus-loader']
       }
     ]
-  },
-  postcss: function() {
-    return [
-      Autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9'
-        ]
-      }),
-    ];
   }
 };

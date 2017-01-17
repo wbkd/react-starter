@@ -4,7 +4,7 @@ const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ExtractCSS = new ExtractTextPlugin('styles/bundle.css');
+const ExtractCSS = new ExtractTextPlugin({filename: 'styles/bundle.css' });
 
 module.exports = {
   devtool: 'source-map',
@@ -38,9 +38,8 @@ module.exports = {
         minifyURLs: true
       }
     }),
-    new Webpack.optimize.OccurrenceOrderPlugin(),
-    new Webpack.optimize.DedupePlugin(),
     new Webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compressor: {
         screw_ie8: true,
         warnings: false
@@ -56,39 +55,31 @@ module.exports = {
     new CopyWebpackPlugin([
       { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
     ]),
+    new Webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss: [
+          Autoprefixer
+        ]
+      }
+    }),
     ExtractCSS
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015'],
-          cacheDirectory: true
-        }
+        use: 'babel-loader'
       },
       {
         test: /\.styl$/i,
-        loader: ExtractCSS.extract(['css', 'postcss', 'stylus'])
+        loaders: ExtractCSS.extract(['css-loader', 'postcss-loader', 'stylus-loader'])
       },
       {
         test: /\.css$/,
-        loader: ExtractCSS.extract(['css'])
+        use: ExtractCSS.extract(['css-loader'])
       },
     ]
-  },
-  postcss: function() {
-    return [
-      Autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9'
-        ]
-      }),
-    ];
   }
 };
