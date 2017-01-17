@@ -12,7 +12,8 @@ module.exports = {
     contentBase: './build',
     hot: true,
     port: 3000,
-    inline: true
+    inline: true,
+    open: true
   },
   entry: [
     require.resolve('./polyfills'),
