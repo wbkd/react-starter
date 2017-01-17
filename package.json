@@ -1,13 +1,17 @@
 {
   "name": "react-starter",
+  "config": {
+    "appname": "my-app-name"
+  },
   "version": "1.0.0",
   "description": "lightweight react starterkit with webpack, redux, react-router",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack/webpack.config.prod.js --colors",
     "start": "NODE_ENV=development webpack-dev-server --config  webpack/webpack.config.dev.js --watch --colors --no-info",
-    "zip": "bestzip bundle.zip build/",
-    "upload": "....",
-    "deploy": "npm run build && npm run zip && npm run upload"
+    "zip": "bestzip build/bundle.zip build/",
+    "upload": "rsync -avz -e \"ssh\" ./build/ moklick_webkid@ssh.alwaysdata.com:/home/moklick/apps.webkid\/$npm_package_config_appname && npm run info",
+    "deploy": "npm run build && npm run zip && npm run upload",
+    "info": "echo Deploy succeeded on moklick_webkid@ssh.alwaysdata.com:/home/moklick/apps.webkid\/$npm_package_config_appname"
   },
   "repository": {
     "url": "git@github.com:wbkd/react-starter.git",
