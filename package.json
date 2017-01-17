@@ -47,7 +47,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^4.1.1",
-    "stylus-loader": "^2.4.0",
+    "style-loader": "^0.13.1",
     "whatwg-fetch": "^2.0.1"
   }
 }

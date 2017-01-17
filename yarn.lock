@@ -2941,7 +2941,7 @@ loader-runner@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.2.0.tgz#824c1b699c4e7a2b6501b85902d5b862bf45b3fa"
 
-loader-utils@^0.2.11, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.7, loader-utils@^0.2.9, loader-utils@~0.2.2:
+loader-utils@^0.2.11, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.7, loader-utils@~0.2.2:
   version "0.2.16"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.16.tgz#f08632066ed8282835dff88dfb52704765adee6d"
   dependencies:
@@ -4583,12 +4583,11 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-stylus-loader:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-2.4.0.tgz#2ffbf2854a2071086b88bc338f423ad985b43544"
+style-loader:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.1.tgz#468280efbc0473023cd3a6cd56e33b5a1d7fc3a9"
   dependencies:
-    loader-utils "^0.2.9"
-    when "~3.6.x"
+    loader-utils "^0.2.7"
 
 supports-color@^0.2.0:
   version "0.2.0"
@@ -4957,10 +4956,6 @@ websocket-extensions@>=0.1.1:
 whatwg-fetch, whatwg-fetch@>=0.10.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.1.tgz#078b9461bbe91cea73cbce8bb122a05f9e92b772"
-
-when@~3.6.x:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/when/-/when-3.6.4.tgz#473b517ec159e2b85005497a13983f095412e34e"
 
 whet.extend@~0.9.9:
   version "0.9.9"
