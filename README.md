@@ -59,7 +59,3 @@ Under [localhost:3000/index_iframe.html](http://localhost:3000/index_iframe.html
 ## Contribute
 
 Feel free to dive in! [Open an issue](https://github.com/wbkd/react-starter/issues/new) or submit PRs.
-
-## License
-
-MIT (c) Protocol Labs
