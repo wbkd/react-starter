@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Match } from 'react-router';
+import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
 
 const AppContainer = props => (
   <BrowserRouter>
-    <Match exactly pattern="/" render={(matchProps) => <App {...props} {...matchProps} />} />
+    <Route exact path="/" render={(matchProps) => <App {...props} {...matchProps} />} />
   </BrowserRouter>
 );
 
