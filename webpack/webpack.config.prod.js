@@ -4,7 +4,6 @@ const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ExtractCSS = new ExtractTextPlugin({filename: 'styles/bundle.css' });
 
 module.exports = {
   devtool: 'source-map',
@@ -66,7 +65,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
     ]),
-    ExtractCSS
+    new ExtractTextPlugin({filename: 'bundle.css'})
   ],
   module: {
     rules: [
@@ -76,13 +75,44 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.scss$/i,
-        loaders: ExtractCSS.extract(['css-loader', 'postcss-loader', 'sass-loader'])
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract(Object.assign({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }))
       },
       {
-        test: /\.css$/,
-        use: ExtractCSS.extract(['css-loader'])
+        test: /\.scss$/i,
+        use: ExtractTextPlugin.extract(Object.assign({
+           fallback: "style-loader",
+            use: [
+              {
+                loader: 'css-loader'
+              },
+              {
+                loader: 'postcss-loader'
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  data: '@import "globals";',
+                  includePaths: [
+                    Path.resolve(__dirname, '../src/styles')
+                  ]
+                }
+              }
+            ]
+        }))
       },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/images/[name].[ext]'
+          }
+        }
+      }
     ]
   }
 };

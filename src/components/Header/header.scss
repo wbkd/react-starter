@@ -1,9 +1,7 @@
-@import '../../styles/globals';
-
 header {
   font-size: 1em;
-  background: $grey;
-  color:$white;
+  background: #ddd;
+  color: $white;
   padding: 1em;
 
   nav {
@@ -21,7 +19,7 @@ header {
       text-decoration: none;
 
       &:hover {
-        color: darken($white,10%);
+        color: darken(#fff,10%);
       }
     }
   }

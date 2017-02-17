@@ -6,11 +6,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 
 module.exports = {
-  devtool: 'cheap-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   devServer:
   {
     contentBase: './build',
     hot: true,
+    compress: true,
     port: 3000,
     inline: true,
     open: true
@@ -68,11 +69,30 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?importLoaders=1', 'postcss-loader']
+         use: [ 'style-loader', 'css-loader' ]
       },
       {
         test: /\.scss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              data: '@import "globals";',
+              includePaths: [
+                Path.resolve(__dirname, '../src/styles')
+              ]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/images/[name].[ext]'
+          }
+        }
       }
     ]
   }
