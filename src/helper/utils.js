@@ -9,25 +9,26 @@ const DEBUG = true;
 /////////////////////
 
 // < IE9
-const isOldBrowser = !(('querySelector' in document) && ('localStorage' in window) && ('addEventListener' in window)),
+export const isOldBrowser = !(('querySelector' in document) && ('localStorage' in window) && ('addEventListener' in window));
   // includes tables and smartphones
-  isMobile = !isUndefined(window.orientation),
+export const isMobile = !isUndefined(window.orientation);
   // smartphone detection (android,iphone,blackberry,windows phone)
-  isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+export const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   // device depending click event
-  clickEvent = isMobile ? 'touchstart' : 'click';
+export const clickEvent = isMobile ? 'touchstart' : 'click';
 
+export const isDesktop= window.innerWidth > 786;
 
 
 ///////////////////////
 /// helper functions //
 ///////////////////////
 
-function isUndefined(obj) {
+export function isUndefined(obj) {
   return typeof obj === 'undefined';
 }
 
-function isNumeric(number) {
+export function isNumeric(number) {
   if(isUndefined(number)){
     return false;
   }
@@ -35,7 +36,7 @@ function isNumeric(number) {
   return !isNaN(number) && isFinite(number);
 }
 
-function numberFormat(number) {
+export function numberFormat(number) {
 
   if (!isNumeric(number)) {
     return false;
@@ -45,7 +46,7 @@ function numberFormat(number) {
 }
 
 // add some classes to the html element
-function addHelperClasses() {
+export function addHelperClasses() {
   let htmlElement = document.getElementsByTagName('html')[0],
     className = [];
 
@@ -64,7 +65,7 @@ function addHelperClasses() {
   htmlElement.className = className.join(' ');
 }
 
-function log(){
+export function log(){
   if(!DEBUG) {
     return false;
   }
@@ -77,15 +78,3 @@ function log(){
 
   console.log(args);
 }
-
-export default {
-  isMobile,
-  isSmartphone,
-  isOldBrowser,
-  clickEvent,
-  isUndefined,
-  isNumeric,
-  numberFormat,
-  addHelperClasses,
-  log
-};
