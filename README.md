@@ -1,6 +1,6 @@
 # React Starterkit
 
-A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [React Router v4](https://react-router.now.sh/), [Sass](http://sass-lang.com/) and [Webpack v2](https://webpack.js.org/).
+A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [React Router v4](https://reacttraining.com/react-router/), [Stylus](http://stylus-lang.com/) and [Webpack v2](https://webpack.js.org/).
 
 ## Get the kit
 
@@ -57,7 +57,7 @@ $ npm run deploy
 Under [localhost:3000/index_iframe.html](http://localhost:3000/index_iframe.html) you will find a embed version of your for testing purposes.
 
 ## Helper functions in utils (ES6 exports)
-log, isUndefined, isNumeric, numberFormat, addHelperClasses
+log, isUndefined, isNumeric, numberFormat, addHelperClasses,
 isSmartphone, isTablet, isDesktop, isSmallDevice, clickEvent, isOldIE
 
 ```javascript
