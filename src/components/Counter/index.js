@@ -9,6 +9,6 @@ const Counter = props => {
       <button onClick={ props.incrementHandler }>Increment!</button>
     </div>
   )
-};
+}
 
 export default Counter;

@@ -68,9 +68,15 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader']
       },
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
+        enforce: 'pre',
+        exclude: /(node_modules|bower_components|\.spec\.js)/,
+        use: ['eslint-loader']
+      },
+      {
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
       {
         test: /\.css$/,
