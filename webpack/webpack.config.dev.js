@@ -63,27 +63,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.styl$/i,
+        enforce: 'pre',
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader']
+      },
+      {
         test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css$/,
-         use: [ 'style-loader', 'css-loader' ]
-      },
-      {
-        test: /\.scss$/i,
-        use: ['style-loader', 'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              data: '@import "globals";',
-              includePaths: [
-                Path.resolve(__dirname, '../src/styles')
-              ]
-            }
-          }
-        ]
+         use: [ 'style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,

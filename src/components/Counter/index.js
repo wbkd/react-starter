@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Counter.scss';
+import './Counter.styl';
 
 const Counter = props => {
   return (

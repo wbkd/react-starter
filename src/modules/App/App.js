@@ -5,7 +5,7 @@ import * as AppActions from './AppState';
 import Header from '../../components/Header/';
 import MainView from '../MainView/MainViewContainer';
 
-import './App.scss';
+import './App.styl';
 
 class App extends Component {
 

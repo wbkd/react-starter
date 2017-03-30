@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './header.scss';
+import './header.styl';
 
 const Header = () =>
   <header className="clearfix">
