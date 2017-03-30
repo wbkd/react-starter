@@ -14,7 +14,7 @@ module.exports = {
     compress: true,
     port: 3000,
     inline: true,
-    open: true
+    open: false
   },
   entry: [
     require.resolve('./polyfills'),
