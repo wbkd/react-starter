@@ -14,6 +14,6 @@ const Header = () =>
         <Link to="">Link2</Link>
       </div>
     </nav>
-  </header>
+  </header>;
 
 export default Header;

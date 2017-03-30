@@ -57,7 +57,7 @@ module.exports = {
     // copy data folder to make it avaiable in redux loadData action
     // for sure could be handled with a different webpack configuration
     new CopyWebpackPlugin([
-      { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
+      { from: Path.resolve(__dirname, '../src/public/data'), to: 'data' },
     ])
   ],
   module: {
@@ -70,7 +70,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         enforce: 'pre',
-        exclude: /(node_modules|bower_components|\.spec\.js)/,
+        include: Path.resolve(__dirname, '../src'),
         use: ['eslint-loader']
       },
       {

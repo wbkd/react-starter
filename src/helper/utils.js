@@ -4,9 +4,38 @@
  */
 const DEBUG = true;
 
-/////////////////////
-/// devices helper //
-/////////////////////
+// helper functions
+
+export function isUndefined(obj) {
+  return typeof obj === 'undefined';
+}
+
+export function isNumeric(number) {
+  if (isUndefined(number)) {
+    return false;
+  }
+
+  return !isNaN(number) && isFinite(number);
+}
+
+export function numberFormat(number) {
+  if (!isNumeric(number)) {
+    return false;
+  }
+
+  return number.toLocaleString('de-DE');
+}
+
+export function log(...args) {
+  if (!DEBUG) {
+    return false;
+  }
+
+  console.log(args);
+  return args;
+}
+
+// device helper
 
 // < IE9
 export const isOldBrowser = !(('querySelector' in document) && ('localStorage' in window) && ('addEventListener' in window));
@@ -17,38 +46,12 @@ export const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBe
   // device depending click event
 export const clickEvent = isMobile ? 'touchstart' : 'click';
 
-export const isDesktop= window.innerWidth > 786;
-
-
-///////////////////////
-/// helper functions //
-///////////////////////
-
-export function isUndefined(obj) {
-  return typeof obj === 'undefined';
-}
-
-export function isNumeric(number) {
-  if(isUndefined(number)){
-    return false;
-  }
-
-  return !isNaN(number) && isFinite(number);
-}
-
-export function numberFormat(number) {
-
-  if (!isNumeric(number)) {
-    return false;
-  }
-
-  return number.toLocaleString('de-DE');
-}
+export const isDesktop = window.innerWidth > 786;
 
 // add some classes to the html element
 export function addHelperClasses() {
-  let htmlElement = document.getElementsByTagName('html')[0],
-    className = [];
+  const htmlElement = document.getElementsByTagName('html')[0];
+  const className = [];
 
   if (isOldBrowser) {
     className.push('is-oldbrowser');
@@ -63,18 +66,4 @@ export function addHelperClasses() {
   }
 
   htmlElement.className = className.join(' ');
-}
-
-export function log(){
-  if(!DEBUG) {
-    return false;
-  }
-
-  let args = Array.prototype.slice.call(arguments);
-
-  if(args.length === 1){
-    args = args[0];
-  }
-
-  console.log(args);
 }

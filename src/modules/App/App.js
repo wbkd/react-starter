@@ -17,10 +17,10 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <MainView {...this.props}/>
+        <MainView {...this.props} />
       </div>
     );
   }
 }
 
- export default App;
+export default App;

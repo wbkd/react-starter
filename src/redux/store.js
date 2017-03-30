@@ -6,7 +6,7 @@ import Reducer from './reducer';
 const enhancers = compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
-)
+);
 
 export default createStore(
   Reducer,

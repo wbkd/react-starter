@@ -5,7 +5,7 @@ import App from './App';
 
 const AppContainer = props => (
   <BrowserRouter>
-    <Route exact path="/" render={(matchProps) => <App {...props} {...matchProps} />} />
+    <Route exact path="/" render={matchProps => <App {...props} {...matchProps} />} />
   </BrowserRouter>
 );
 

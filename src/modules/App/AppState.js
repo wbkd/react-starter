@@ -7,39 +7,38 @@ const LOAD_ERROR = 'App/AppState/LOAD_ERROR';
 const initialState = {
   loading: true,
   data: false
-}
+};
 
 export function loadData() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch({ type: LOAD_START });
 
     Axios.get('data/sample.json')
-      .then(res => {
+      .then((res) => {
         console.log('response', res);
         // here do sth with the data
-        const data = res.data || {};
+        const data = res.data || {};
         dispatch({ type: LOAD_SUCCESS, data });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
-        dispatch({ type: LOAD_ERROR })
+        dispatch({ type: LOAD_ERROR });
       });
-    }
+  };
 }
 
 export default function AppReducer(state = initialState, action = {}) {
-  switch(action.type) {
-
+  switch (action.type) {
     case LOAD_START:
-     return Object.assign({}, state, { loading: true });
+      return Object.assign({}, state, { loading: true });
 
     case LOAD_SUCCESS:
-     return Object.assign({}, state, {
-       loading: false,
-       data: action.data
-     });
+      return Object.assign({}, state, {
+        loading: false,
+        data: action.data
+      });
 
     default:
-      return Object.assign({}, state)
+      return Object.assign({}, state);
   }
-};
+}

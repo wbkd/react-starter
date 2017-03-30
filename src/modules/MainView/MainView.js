@@ -10,7 +10,7 @@ class MainView extends PureComponent {
     this.handleIncrement = this.handleIncrement.bind(this);
   }
   handleIncrement() {
-    this.props.dispatch(increment())
+    this.props.dispatch(increment());
   }
 
   render() {
@@ -22,4 +22,4 @@ class MainView extends PureComponent {
   }
 }
 
- export default MainView;
+export default MainView;
