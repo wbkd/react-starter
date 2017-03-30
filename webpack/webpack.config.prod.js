@@ -82,26 +82,10 @@ module.exports = {
         }))
       },
       {
-        test: /\.scss$/i,
+        test: /\.styl$/i,
         use: ExtractTextPlugin.extract(Object.assign({
            fallback: "style-loader",
-            use: [
-              {
-                loader: 'css-loader'
-              },
-              {
-                loader: 'postcss-loader'
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  data: '@import "globals";',
-                  includePaths: [
-                    Path.resolve(__dirname, '../src/styles')
-                  ]
-                }
-              }
-            ]
+            use: ['css-loader', 'postcss-loader', 'stylus-loader']
         }))
       },
       {
