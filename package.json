@@ -53,6 +53,7 @@
     "react": "^15.4.2",
     "react-dev-utils": "0.5.2",
     "react-dom": "^15.4.2",
+    "react-icons": "^2.2.3",
     "react-redux": "^5.0.2",
     "react-router": "4.0.0",
     "react-router-dom": "4.0.0",
