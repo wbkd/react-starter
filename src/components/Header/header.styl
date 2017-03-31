@@ -1,21 +1,26 @@
-header
+.header
   font-size: 1.6em
   background: #ddd
   color: white
   padding: 1em
 
-  nav
-    float:right
-    user-select:none
+  display: flex
+  justify-content: flex-end
 
-  .nav-item
-    font-size: 1em
-    float:left
-    margin-left:.5em
+.header__claim
+  margin-right: auto
 
-    a
-      color: white
-      text-decoration: none
+.menu
+  user-select:none
 
-      &:hover
-        color: darken(#fff,10%)
+.menu__item
+  font-size: 1em
+  float:left
+  margin-left: .5em
+
+  a
+    color: white
+    text-decoration: none
+
+    &:hover
+      color: darken(#fff,10%)

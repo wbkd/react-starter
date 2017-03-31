@@ -8,14 +8,16 @@ class Header extends PureComponent {
 
   render() {
     return (
-      <header className="clearfix">
-        <span>webkid react </span>
-        <FaRocket />
-        <nav className="clearfix">
-          <div className="nav-item">
+      <header className="header">
+        <div className="header__claim">
+          <span>webkid react </span>
+          <FaRocket />
+        </div>
+        <nav className="menu">
+          <div className="menu__item">
             <Link to="">Link1</Link>
           </div>
-          <div className="nav-item">
+          <div className="menu__item">
             <Link to="">Link2</Link>
           </div>
         </nav>
