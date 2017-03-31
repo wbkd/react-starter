@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
 
-const AppContainer = props => (
-  <BrowserRouter>
-    <Route exact path="/" render={matchProps => <App {...props} {...matchProps} />} />
-  </BrowserRouter>
-);
+class AppContainer extends PureComponent {
+  shouldComponentUpdate() {
+    return true;
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <Route exact path="/" render={matchProps => <App {...this.props} {...matchProps} />} />
+      </BrowserRouter>
+    );
+  }
+}
 
 export default connect(
   state => state.AppState

@@ -46,17 +46,17 @@ module.exports = {
     new WatchMissingNodeModulesPlugin(Path.resolve(__dirname, 'node_modules')),
     new HtmlWebpackPlugin({
       inject: true,
-      template: Path.resolve(__dirname, '../src/index.html'),
+      template: Path.resolve(__dirname, '../src/index.html')
     }),
     new HtmlWebpackPlugin({
       title: 'iframe testpage',
       inject: false,
       filename: 'index_iframe.html',
-      template: Path.resolve(__dirname, '../src/index_iframe.html'),
+      template: Path.resolve(__dirname, '../src/index_iframe.html')
     }),
     // copy data folder to make it available in redux loadData action
     new CopyWebpackPlugin([
-      { from: Path.resolve(__dirname, '../src/public/data'), to: 'data' },
+      { from: Path.resolve(__dirname, '../src/public/data'), to: 'data' }
     ])
   ],
   module: {
@@ -68,18 +68,13 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        enforce: 'pre',
         include: Path.resolve(__dirname, '../src'),
-        use: ['eslint-loader']
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: ['babel-loader']
+        exclude: /(node_modules|webpack)/,
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css$/,
-         use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,

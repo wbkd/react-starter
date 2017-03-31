@@ -6,7 +6,7 @@
     "comma-dangle": ["error", {
         "objects": "never",
         "arrays": "never",
-        "functions": "ignore"
+        "functions": "ignore",
       }
     ],
     "react/prop-types": 0,

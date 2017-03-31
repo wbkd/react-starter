@@ -3,10 +3,15 @@ import React, { PureComponent } from 'react';
 import './counter.styl';
 
 class Counter extends PureComponent {
+
+  shouldComponentUpdate() {
+    return true;
+  }
+
   render() {
     return (
       <div className="counter">
-        <div>{ this.props.counter }</div>
+        <div>{this.props.counter}</div>
         <button onClick={this.props.incrementHandler}>Increment!</button>
       </div>
     );

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import * as AppActions from './AppState';
 
@@ -7,7 +7,7 @@ import MainView from '../MainView/MainViewContainer';
 
 import './App.styl';
 
-class App extends Component {
+class App extends PureComponent {
 
   componentDidMount() {
     this.props.dispatch(AppActions.loadData());
