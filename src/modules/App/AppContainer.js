@@ -4,9 +4,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
 
 class AppContainer extends PureComponent {
-  shouldComponentUpdate() {
-    return true;
-  }
 
   render() {
     return (

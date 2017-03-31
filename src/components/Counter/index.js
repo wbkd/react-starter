@@ -4,10 +4,6 @@ import './counter.styl';
 
 class Counter extends PureComponent {
 
-  shouldComponentUpdate() {
-    return true;
-  }
-
   render() {
     return (
       <div className="counter">

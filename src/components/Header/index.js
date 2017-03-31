@@ -6,10 +6,6 @@ import './header.styl';
 
 class Header extends PureComponent {
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
   render() {
     return (
       <header className="clearfix">
