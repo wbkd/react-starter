@@ -54,8 +54,7 @@ module.exports = {
       filename: 'index_iframe.html',
       template: Path.resolve(__dirname, '../src/index_iframe.html'),
     }),
-    // copy data folder to make it avaiable in redux loadData action
-    // for sure could be handled with a different webpack configuration
+    // copy data folder to make it available in redux loadData action
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../src/public/data'), to: 'data' },
     ])
@@ -80,7 +79,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-         use: [ 'style-loader', 'css-loader', 'postcss-loader']
+         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,

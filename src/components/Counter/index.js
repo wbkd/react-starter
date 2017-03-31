@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
 import './counter.styl';
 
-const Counter = props =>
-  <div className="counter">
-    <div>{ props.counter }</div>
-    <button onClick={props.incrementHandler}>Increment!</button>
-  </div>;
+class Counter extends PureComponent {
+  render() {
+    return (
+      <div className="counter">
+        <div>{ this.props.counter }</div>
+        <button onClick={this.props.incrementHandler}>Increment!</button>
+      </div>
+    );
+  }
+}
 
 export default Counter;

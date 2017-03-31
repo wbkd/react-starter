@@ -9,7 +9,7 @@ export function log(...args) {
     return false;
   }
 
-  console.log(args);
+  return console.log(args);
 }
 
 export function isUndefined(obj) {
@@ -56,7 +56,7 @@ export function addHelperClasses() {
     className.push('is-smartphone');
   }
 
-  htmlElement.className = className.join(' ');
+  return htmlElement.className = className.join(' ');
 }
 
 // device helper

@@ -1,14 +1,18 @@
-# disable a linting rule by setting to zero
 {
-  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-undef": 0,
-    "comma-dangle": 0,
+    "comma-dangle": ["error", {
+        "objects": "never",
+        "arrays": "never",
+        "functions": "ignore"
+      }
+    ],
     "react/prop-types": 0,
-    "no-console": 0,
-    "global-require": 0,
-    "consistent-return": 0,
-    "no-use-before-define": 0,
+    "no-console": 0
+  },
+  "env": {
+    "browser": true
   }
 }
