@@ -4,6 +4,7 @@ const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -63,9 +64,18 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from:  Path.resolve(__dirname, '../src/public/data'), to: 'data' },
+      { from: Path.resolve(__dirname, '../src/public/data'), to: 'data' }
     ]),
-    new ExtractTextPlugin({filename: 'bundle.css'})
+    new ExtractTextPlugin({ filename: 'bundle.css' }),
+    new ZipPlugin({
+      filename: 'build.zip',
+      fileOptions: {
+        mtime: new Date(),
+        mode: 0o100664,
+        compress: true,
+        forceZip64Format: false
+      }
+    })
   ],
   module: {
     rules: [
@@ -84,8 +94,8 @@ module.exports = {
       {
         test: /\.styl$/i,
         use: ExtractTextPlugin.extract(Object.assign({
-           fallback: "style-loader",
-            use: ['css-loader', 'postcss-loader', 'stylus-loader']
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader', 'stylus-loader']
         }))
       },
       {

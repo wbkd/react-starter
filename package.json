@@ -8,9 +8,8 @@
   "scripts": {
     "build": "rm -rf ./build && NODE_ENV=production webpack --config webpack/webpack.config.prod.js --colors",
     "start": "NODE_ENV=development webpack-dev-server --config  webpack/webpack.config.dev.js --watch --colors --no-info",
-    "zip": "rm -f build/build.zip && zip -r build/build ./build",
     "upload": "rsync -avz -e \"ssh\" ./build/ moklick_webkid@ssh.alwaysdata.com:/home/moklick/apps.webkid/$npm_package_config_appname && npm run info",
-    "deploy": "npm run build && npm run zip && npm run upload",
+    "deploy": "npm run build && npm run upload",
     "info": "echo Deploy succeeded on moklick_webkid@ssh.alwaysdata.com:/home/moklick/apps.webkid/$npm_package_config_appname"
   },
   "repository": {
@@ -40,7 +39,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "2.3.2",
-    "webpack-dev-server": "2.4.2"
+    "webpack-dev-server": "2.4.2",
+    "zip-webpack-plugin": "^1.1.0"
   },
   "dependencies": {
     "autoprefixer": "^6.6.1",
