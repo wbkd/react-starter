@@ -4,7 +4,7 @@
  */
 const DEBUG = true;
 
-export function log(...args) {
+function log(...args) {
   if (!DEBUG) {
     return false;
   }
@@ -12,11 +12,11 @@ export function log(...args) {
   return console.log(args);
 }
 
-export function isUndefined(obj) {
+function isUndefined(obj) {
   return typeof obj === 'undefined';
 }
 
-export function isNumeric(number) {
+function isNumeric(number) {
   if (isUndefined(number)) {
     return false;
   }
@@ -31,7 +31,7 @@ export function isNumeric(number) {
  * @param  {Object} [options={}]         [https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString]
  * @return {String}
  */
-export function numberFormat(number, countyCode = 'de-De', options = {}) {
+function numberFormat(number, countyCode = 'de-De', options = {}) {
   if (!isNumeric(number) || isUndefined(Number.toLocaleString())) {
     return false;
   }
@@ -39,39 +39,18 @@ export function numberFormat(number, countyCode = 'de-De', options = {}) {
   return number.toLocaleString(countyCode, options);
 }
 
-// add some classes to the html element
-export function addHelperClasses() {
-  const htmlElement = document.getElementsByTagName('html')[0];
-  const className = [];
-
-  if (isOldBrowser) {
-    className.push('is-oldbrowser');
-  }
-
-  if (isMobile) {
-    className.push('is-mobile');
-  }
-
-  if (isSmartphone) {
-    className.push('is-smartphone');
-  }
-
-  return htmlElement.className = className.join(' ');
-}
-
 // device helper
 // smartphone detection (android,iphone,blackberry,windows phone)
-export const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-export const isTablet = !isUndefined(window.orientation) && window.innerWidth === 786;
-export const isDesktop = window.innerWidth > 786;
+const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isTablet = !isUndefined(window.orientation) && window.innerWidth === 786;
+const isTouch = !isUndefined(window.orientation);
+const isDesktop = window.innerWidth > 786;
 
-export const isSmallDevice = window.innerWidth <= 414;
+
 // device depending click event
-export const clickEvent = !isUndefined(window.orientation) ? 'touchstart' : 'click';
+const clickEvent = isTouch ? 'touchstart' : 'click';
 
-const version = detectIE();
-export const isOldIE = version && version < 12;
-
+// ie helper
 function detectIE() {
   const ua = window.navigator.userAgent;
   const msIE = ua.indexOf('MSIE ');
@@ -97,3 +76,41 @@ function detectIE() {
 
   return false;
 }
+
+const version = detectIE();
+const isOldIE = version && version < 12;
+
+// add some classes to the html element
+function addHelperClasses() {
+  const htmlElement = document.getElementsByTagName('html')[0];
+  const className = [];
+
+  if (isOldIE) {
+    className.push('is-oldbrowser');
+  }
+
+  if (isTouch) {
+    className.push('is-touch');
+  }
+
+  if (isSmartphone) {
+    className.push('is-smartphone');
+  }
+
+  htmlElement.className = className.join(' ');
+  return htmlElement;
+}
+
+export default {
+  log,
+  isUndefined,
+  isNumeric,
+  numberFormat,
+  isSmartphone,
+  isTablet,
+  isDesktop,
+  isTouch,
+  clickEvent,
+  isOldIE,
+  addHelperClasses
+};
