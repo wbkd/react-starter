@@ -2,9 +2,9 @@
  * Here you implement your functions you want to use everywhere in your application.
  * See this functions as an example.
  */
-const DEBUG = true;
+export const DEBUG = true;
 
-function log(...args) {
+export function log(...args) {
   if (!DEBUG) {
     return false;
   }
@@ -12,11 +12,11 @@ function log(...args) {
   return console.log(args);
 }
 
-function isUndefined(obj) {
+export function isUndefined(obj) {
   return typeof obj === 'undefined';
 }
 
-function isNumeric(number) {
+export function isNumeric(number) {
   if (isUndefined(number)) {
     return false;
   }
@@ -31,7 +31,7 @@ function isNumeric(number) {
  * @param  {Object} [options={}]         [https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString]
  * @return {String}
  */
-function numberFormat(number, countyCode = 'de-De', options = {}) {
+export function numberFormat(number, countyCode = 'de-De', options = {}) {
   if (!isNumeric(number) || isUndefined(Number.toLocaleString())) {
     return false;
   }
@@ -41,14 +41,14 @@ function numberFormat(number, countyCode = 'de-De', options = {}) {
 
 // device helper
 // smartphone detection (android,iphone,blackberry,windows phone)
-const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-const isTablet = !isUndefined(window.orientation) && window.innerWidth === 786;
-const isTouch = !isUndefined(window.orientation);
-const isDesktop = window.innerWidth > 786;
+export const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+export const isTablet = !isUndefined(window.orientation) && window.innerWidth === 786;
+export const isTouch = !isUndefined(window.orientation);
+export const isDesktop = window.innerWidth > 786;
 
 
 // device depending click event
-const clickEvent = isTouch ? 'touchstart' : 'click';
+export const clickEvent = isTouch ? 'touchstart' : 'click';
 
 // ie helper
 function detectIE() {
@@ -78,10 +78,10 @@ function detectIE() {
 }
 
 const version = detectIE();
-const isOldIE = version && version < 12;
+export const isOldIE = version && version < 12;
 
 // add some classes to the html element
-function addHelperClasses() {
+export function addHelperClasses() {
   const htmlElement = document.getElementsByTagName('html')[0];
   const className = [];
 
