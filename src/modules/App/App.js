@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 
+import Header from '~/components/Header/';
+import MainView from '~/modules/MainView/MainViewContainer';
+
 import * as AppActions from './AppState';
 
-import Header from '../../components/Header/';
-import MainView from '../MainView/MainViewContainer';
 
 import './App.styl';
 

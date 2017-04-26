@@ -16,6 +16,11 @@ module.exports = {
     path: Path.join(__dirname, '../build'),
     filename: 'js/bundle.js'
   },
+  resolve: {
+    alias: {
+      '~': Path.join(__dirname, '../src')
+    }
+  },
   plugins: [
     new Webpack.LoaderOptionsPlugin({
       minimize: true,
