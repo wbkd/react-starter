@@ -46,13 +46,6 @@ Creates an zip archive of your build into the build folder.
 $ npm run zip
 ```
 
-## Deploy
-Runs the build and zip task and uploads to your server.
-
-```sh
-$ npm run deploy
-```
-
 ## Embed version
 Under [localhost:3000/index_iframe.html](http://localhost:3000/index_iframe.html) you will find a embed version of your for testing purposes.
 
