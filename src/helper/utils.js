@@ -80,27 +80,6 @@ function detectIE() {
 const version = detectIE();
 export const isOldIE = version && version < 12;
 
-// add some classes to the html element
-export function addHelperClasses() {
-  const htmlElement = document.getElementsByTagName('html')[0];
-  const className = [];
-
-  if (isOldIE) {
-    className.push('is-oldbrowser');
-  }
-
-  if (isTouch) {
-    className.push('is-touch');
-  }
-
-  if (isSmartphone) {
-    className.push('is-smartphone');
-  }
-
-  htmlElement.className = className.join(' ');
-  return htmlElement;
-}
-
 export default {
   log,
   isUndefined,
@@ -111,6 +90,5 @@ export default {
   isDesktop,
   isTouch,
   clickEvent,
-  isOldIE,
-  addHelperClasses
+  isOldIE
 };
