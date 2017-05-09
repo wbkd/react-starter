@@ -11,9 +11,7 @@ class App extends PureComponent {
   }
 
   render() {
-    return (
-      <div className="app" />
-    );
+    return !this.props.isLoading && (<div className="app" />);
   }
 }
 

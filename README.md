@@ -1,6 +1,6 @@
 # React Starterkit
 
-A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [React Router v4](https://reacttraining.com/react-router/), [Stylus](http://stylus-lang.com/), [Webpack v2](https://webpack.js.org/) and [React Icons](https://gorangajic.github.io/react-icons/index.html).
+A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Stylus](http://stylus-lang.com/) and [Webpack v2](https://webpack.js.org/).
 
 ## Get the kit
 

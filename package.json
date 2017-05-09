@@ -54,10 +54,7 @@
     "react": "^15.5.4",
     "react-dev-utils": "0.5.2",
     "react-dom": "^15.5.4",
-    "react-icons": "^2.2.3",
     "react-redux": "^5.0.4",
-    "react-router": "4.1.1",
-    "react-router-dom": "4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "whatwg-fetch": "^2.0.3"
