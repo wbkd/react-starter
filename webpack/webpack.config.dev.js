@@ -75,7 +75,6 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
-        exclude: /(node_modules|webpack)/,
         use: ['babel-loader', 'eslint-loader']
       },
       {
