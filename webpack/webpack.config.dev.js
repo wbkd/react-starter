@@ -75,7 +75,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader', {
+          loader: 'eslint-loader',
+          options: { emitWarning: true }
+        }]
       },
       {
         test: /\.css$/,
