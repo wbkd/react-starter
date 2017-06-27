@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 
 import * as AppActions from './AppState';
-
 import './App.styl';
 
 class App extends PureComponent {
@@ -15,4 +15,6 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default connect(
+  state => state.AppState
+)(App);

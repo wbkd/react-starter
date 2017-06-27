@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import 'normalize.css';
 
 import Store from './redux/store';
-import App from './modules/App/AppContainer';
+import App from './modules/App';
 
 import './styles/main.styl';
 
