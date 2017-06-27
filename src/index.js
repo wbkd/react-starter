@@ -8,6 +8,8 @@ import App from './modules/App';
 
 import './styles/main.styl';
 
+if (module.hot) module.hot.accept();
+
 ReactDOM.render(
   <Provider store={Store}>
     <App />

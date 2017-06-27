@@ -11,7 +11,7 @@ module.exports = {
   stats: 'normal',
   devServer:
   {
-    contentBase: './build',
+    contentBase: Path.resolve(__dirname, 'build'),
     hot: true,
     compress: true,
     port: 3000,
