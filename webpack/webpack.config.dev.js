@@ -7,6 +7,8 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
+  watch: true,
+  stats: 'normal',
   devServer:
   {
     contentBase: './build',
@@ -15,7 +17,10 @@ module.exports = {
     port: 3000,
     inline: true,
     open: false,
-    publicPath: '/'
+    publicPath: '/',
+    watchOptions: {
+      poll: true
+    }
   },
   entry: [
     require.resolve('./polyfills'),

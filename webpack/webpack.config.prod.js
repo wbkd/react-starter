@@ -8,6 +8,7 @@ const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
+  stats: 'errors-only',
   entry: [
     require.resolve('./polyfills'),
     Path.resolve(__dirname, '../src/index.js')
