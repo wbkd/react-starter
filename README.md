@@ -1,6 +1,7 @@
 # React Starterkit
 
-A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Stylus](http://stylus-lang.com/) and [Webpack v2](https://webpack.js.org/).
+A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Stylus](http://stylus-lang.com/) and [Webpack v3](https://webpack.js.org/).
+(further: Babel, Eslint(Airbnb), Idx, Axios)
 
 ## Get the kit
 
@@ -37,13 +38,6 @@ Builds a minified version of the application in the build folder.
 
 ```sh
 $ npm run build
-```
-
-## Zip
-Creates an zip archive of your build into the build folder.
-
-```sh
-$ npm run zip
 ```
 
 ## Embed version
