@@ -5,10 +5,5 @@
   ],
   "plugins": [
     "transform-class-properties"
-  ],
-  "env": {
-    "production": {
-      "presets": ["react-optimize"]
-    }
-  }
+  ]
 }
