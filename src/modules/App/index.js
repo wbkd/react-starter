@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import * as AppActions from './AppState';
@@ -11,7 +11,7 @@ class App extends PureComponent {
   }
 
   render() {
-    return !this.props.isLoading && (<div className="app" />);
+    return !this.props.isLoading && 'Hello There!';
   }
 }
 

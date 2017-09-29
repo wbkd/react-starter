@@ -1,6 +1,6 @@
 # React Starterkit
 
-A lightweight Starterkit including [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Stylus](http://stylus-lang.com/) and [Webpack v3](https://webpack.js.org/).
+A lightweight Starterkit including [React v16.0](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Stylus](http://stylus-lang.com/) and [Webpack v3](https://webpack.js.org/).
 (further: Babel, Eslint(Airbnb), Idx, Axios)
 
 ## Get the kit
