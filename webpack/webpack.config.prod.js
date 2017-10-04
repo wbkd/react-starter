@@ -23,16 +23,6 @@ module.exports = {
     }
   },
   plugins: [
-    new Webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-      options: {
-        context: __dirname,
-        postcss: [
-          Autoprefixer
-        ]
-      }
-    }),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -101,7 +91,19 @@ module.exports = {
         test: /\.styl$/i,
         use: ExtractTextPlugin.extract(Object.assign({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'stylus-loader']
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                plugins: (loader) => [
+                  Autoprefixer
+                ]
+              }
+            },
+            'stylus-loader'
+          ]
         }))
       },
       {
