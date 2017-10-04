@@ -36,17 +36,6 @@ module.exports = {
     }
   },
   plugins: [
-    new Webpack.LoaderOptionsPlugin({
-      options: {
-        context: __dirname,
-        eslint: {
-          configFile: Path.resolve('./.eslintrc')
-        },
-        postcss: [
-          Autoprefixer
-        ]
-      }
-    }),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')
@@ -75,7 +64,20 @@ module.exports = {
       {
         test: /\.styl$/i,
         enforce: 'pre',
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: (loader) => [
+                Autoprefixer
+              ]
+            }
+          },
+          'stylus-loader'
+        ]
       },
       {
         test: /\.(js|jsx)$/,
@@ -87,7 +89,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: (loader) => [
+                Autoprefixer
+              ]
+            }
+          },
+          'stylus-loader'
+        ]
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
