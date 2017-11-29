@@ -42,9 +42,9 @@ export function numberFormat(number, countyCode = 'de-De', options = {}) {
 // device helper
 // smartphone detection (android,iphone,blackberry,windows phone)
 export const isSmartphone = /android.*mobile|mobile.*android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-export const isTablet = !isUndefined(window.orientation) && window.innerWidth === 786;
+export const isTablet = !isUndefined(window.orientation) && window.innerWidth === 768;
 export const isTouch = !isUndefined(window.orientation);
-export const isDesktop = window.innerWidth > 786;
+export const isDesktop = window.innerWidth > 768;
 
 
 // device depending click event
