@@ -6,7 +6,7 @@
   "version": "1.6.0",
   "description": "lightweight react starterkit with webpack, redux, react-router",
   "scripts": {
-    "build": "rm -rf ./build && NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors --optimize-minimize",
+    "build": "rm -rf ./build && NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors",
     "start": "NODE_ENV=development webpack-dev-server --config  webpack/webpack.config.dev.js"
   },
   "repository": {
