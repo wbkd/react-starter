@@ -11,14 +11,6 @@ $ git clone git@github.com:wbkd/react-starter.git && cd react-starter
 
 ## Installation
 
-Install all dependencies using [yarn](https://yarnpkg.com/).
-
-```sh
-$ yarn
-```
-
-otherwise
-
 ```sh
 $ npm install
 ```
