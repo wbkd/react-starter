@@ -60,7 +60,7 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: Path.resolve(__dirname, '../src/public/data'), to: 'data' }
+      { from: Path.resolve(__dirname, '../public/data'), to: 'data' }
     ]),
     new ExtractTextPlugin({ filename: 'bundle.css' }),
     new ZipPlugin({
