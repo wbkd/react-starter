@@ -5,7 +5,7 @@ const LOAD_SUCCESS = 'App/AppState/LOAD_SUCCESS';
 const LOAD_ERROR = 'App/AppState/LOAD_ERROR';
 
 const initialState = {
-  loading: true,
+  isLoading: true,
   data: false
 };
 
@@ -30,11 +30,11 @@ export function loadData() {
 export default function AppReducer(state = initialState, action = {}) {
   switch (action.type) {
     case LOAD_START:
-      return Object.assign({}, state, { loading: true });
+      return Object.assign({}, state, { isLoading: true });
 
     case LOAD_SUCCESS:
       return Object.assign({}, state, {
-        loading: false,
+        isLoading: false,
         data: action.data
       });
 
