@@ -35,17 +35,6 @@ $ npm run build
 ## Embed version
 Under [localhost:3000/index_iframe.html](http://localhost:3000/index_iframe.html) you will find a embed version of your for testing purposes.
 
-## Helper functions in utils (ES6 exports)
-log, isUndefined, isNumeric, numberFormat, addHelperClasses,
-isSmartphone, isTablet, isDesktop, isSmallDevice, clickEvent, isOldIE
-
-```javascript
-import { isTablet } from '../../helper/utils';
-
-console.log(isTablet);
-```
-
-
 ## Contribute
 
 Feel free to dive in! [Open an issue](https://github.com/wbkd/react-starter/issues/new) or submit PRs.
