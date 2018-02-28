@@ -1,7 +1,8 @@
 import { PureComponent } from 'react';
 import { connect } from 'react-redux';
-
 import * as AppActions from './AppState';
+
+// import img from '../../../public/images/myimg.png';
 import './App.styl';
 
 class App extends PureComponent {
@@ -10,7 +11,7 @@ class App extends PureComponent {
   }
 
   render() {
-    return !this.props.isLoading && 'Hello There!';
+    return !this.props.isLoading && 'Hello There';
   }
 }
 
