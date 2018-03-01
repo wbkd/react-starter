@@ -33,7 +33,7 @@ module.exports = merge(common, {
     }),
     new ExtractTextPlugin({ filename: 'bundle.css' }),
     new UglifyJSPlugin({
-      sourceMap: true
+      sourceMap: true,
     })
   ],
   resolve: {
