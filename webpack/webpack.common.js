@@ -5,11 +5,12 @@ const Autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
-    app: [require.resolve('./polyfills'), Path.resolve(__dirname, '../src/index.js')]
+    app: [require.resolve('./polyfills'), Path.resolve(__dirname, '../src/index.js')],
+    vendor: ['react', 'react-dom']
   },
   output: {
     path: Path.join(__dirname, '../build'),
-    filename: 'js/bundle.js'
+    filename:  'js/[name].js'
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
@@ -28,9 +29,9 @@ module.exports = {
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
-            limit: 8192
+            name: '[path][name].[ext]'
           }
         }
       }
