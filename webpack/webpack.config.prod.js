@@ -11,6 +11,21 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   stats: 'errors-only',
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /react/,
+          name: "vendor",
+          chunks: "initial",
+          minSize: 1,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  },
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
@@ -37,7 +52,7 @@ module.exports = merge(common, {
       sourceMap: true,
     }),
     // compiling mode “scope hoisting”
-    new Webpack.optimize.ModuleConcatenationPlugin()
+    new Webpack.optimize.ModuleConcatenationPlugin(),
   ],
   resolve: {
     alias: {
