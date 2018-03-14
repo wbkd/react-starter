@@ -13,7 +13,8 @@ module.exports = merge(common, {
   stats: 'errors-only',
   plugins: [
     new Webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.BABEL_ENV': JSON.stringify('production')
     }),
     new HtmlWebpackPlugin({
       inject: true,
@@ -34,7 +35,9 @@ module.exports = merge(common, {
     new ExtractTextPlugin({ filename: 'bundle.css' }),
     new UglifyJSPlugin({
       sourceMap: true,
-    })
+    }),
+    // compiling mode “scope hoisting”
+    new Webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
     alias: {

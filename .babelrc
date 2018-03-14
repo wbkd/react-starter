@@ -4,6 +4,11 @@
     "es2015"
   ],
   "plugins": [
-    "transform-class-properties"
-  ]
+    "transform-class-properties",
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
 }
