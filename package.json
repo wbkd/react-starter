@@ -3,7 +3,7 @@
   "config": {
     "appname": "my-app-name"
   },
-  "version": "1.7.1",
+  "version": "2.0.0",
   "description": "lightweight react starterkit with webpack, redux, react-router",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.prod.js  --colors",
