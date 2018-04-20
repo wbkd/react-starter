@@ -33,7 +33,10 @@ module.exports = merge(common, {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
         enforce: "pre",
-        loader: 'eslint-loader'
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        }
       },
       {
         test: /\.styl$/i,

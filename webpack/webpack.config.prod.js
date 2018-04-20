@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const Path = require('path');
 const Autoprefixer = require('autoprefixer');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(common, {
@@ -48,9 +47,6 @@ module.exports = merge(common, {
       }
     }),
     new ExtractTextPlugin({ filename: 'bundle.css' }),
-    new UglifyJSPlugin({
-      sourceMap: true,
-    }),
     // compiling mode “scope hoisting”
     new Webpack.optimize.ModuleConcatenationPlugin(),
   ],
