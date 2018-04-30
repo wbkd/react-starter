@@ -6,7 +6,8 @@
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread",
-    "transform-async-to-generator"
+    "transform-async-to-generator",
+    "babel-plugin-styled-components"
   ],
   "env": {
     "production": {

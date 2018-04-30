@@ -1,7 +1,16 @@
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+
 import * as AppActions from './AppState';
-import './App.styl';
+import initStyle from './AppStyle';
+
+initStyle();
+
+const AppWrapper = styled.div`
+  height: 100%;
+  position: relative;
+`;
 
 class App extends PureComponent {
   componentDidMount() {
@@ -9,7 +18,9 @@ class App extends PureComponent {
   }
 
   render() {
-    return !this.props.isLoading && 'Hello There!';
+    return !this.props.isLoading && (
+      <AppWrapper>Hello There!</AppWrapper>
+    );
   }
 }
 

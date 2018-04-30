@@ -3,7 +3,6 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const Path = require('path');
-const Autoprefixer = require('autoprefixer');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -39,44 +38,9 @@ module.exports = merge(common, {
         }
       },
       {
-        test: /\.styl$/i,
-        enforce: 'pre',
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: (loader) => [
-                Autoprefixer
-              ]
-            }
-          },
-          'stylus-loader'
-        ]
-      },
-      {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
         loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: (loader) => [
-                Autoprefixer
-              ]
-            }
-          },
-          'stylus-loader'
-        ]
       }
     ]
   }
