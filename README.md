@@ -18,7 +18,7 @@ $ npm install
 ## Development
 
 Builds the application and starts a webserver with hot loading.
-Runs on [localhost:3000](http://localhost:8080/)
+Runs on [localhost:8080](http://localhost:8080/)
 
 ```sh
 $ npm run start
@@ -33,7 +33,7 @@ $ npm run build
 ```
 
 ## Embed version
-Under [localhost:3000/index_iframe.html](http://localhost:8080/index_iframe.html) you will find a embed version of your for testing purposes.
+Under [localhost:8080/index_iframe.html](http://localhost:8080/index_iframe.html) you will find a embed version of your for testing purposes.
 
 ## Contribute
 
