@@ -32,7 +32,7 @@ module.exports = merge(common, {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
         enforce: "pre",
-        loader: 'eslint-loader',
+        use: 'eslint-loader',
         options: {
           emitWarning: true,
         }
@@ -40,7 +40,14 @@ module.exports = merge(common, {
       {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
-        loader: 'babel-loader'
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   }
