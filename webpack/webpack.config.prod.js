@@ -3,8 +3,8 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const Path = require('path');
-const Autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Autoprefixer = require('autoprefixer');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -49,6 +49,9 @@ module.exports = merge(common, {
     new ExtractTextPlugin({ filename: 'bundle.css' }),
     // compiling mode “scope hoisting”
     new Webpack.optimize.ModuleConcatenationPlugin(),
+    new Webpack.ProvidePlugin({
+      config: '~/../config.json'
+    })
   ],
   resolve: {
     alias: {
@@ -65,26 +68,18 @@ module.exports = merge(common, {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract(Object.assign({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        }))
-      },
-      {
-        test: /\.styl$/i,
-        use: ExtractTextPlugin.extract(Object.assign({
-          fallback: 'style-loader',
           use: [
             'css-loader',
             {
               loader: 'postcss-loader',
               options: {
                 sourceMap: true,
-                plugins: (loader) => [
+                ident: 'postcss',
+                plugins: () => [
                   Autoprefixer
                 ]
               }
-            },
-            'stylus-loader'
+            }
           ]
         }))
       }
