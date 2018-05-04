@@ -23,7 +23,10 @@ module.exports = merge(common, {
       template: Path.resolve(__dirname, '../src/index_iframe.html')
     }),
     new Webpack.NamedModulesPlugin(),
-    new Webpack.HotModuleReplacementPlugin()
+    new Webpack.HotModuleReplacementPlugin(),
+    new Webpack.ProvidePlugin({
+      config: '~/../config.json'
+    })
   ],
 
   module: {
@@ -32,7 +35,7 @@ module.exports = merge(common, {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
         enforce: "pre",
-        use: 'eslint-loader',
+        loader: 'eslint-loader',
         options: {
           emitWarning: true,
         }
@@ -40,7 +43,7 @@ module.exports = merge(common, {
       {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
-        use: 'babel-loader'
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,

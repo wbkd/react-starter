@@ -4,7 +4,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "comma-dangle": ["error", {
-        "functions": "ignore",
+        "functions": "ignore"
       }
     ],
     "react/prop-types": 0,
@@ -20,5 +20,8 @@
         "config": "./webpack/webpack.config.dev.js"
       }
     }
+  },
+  "globals": {
+    "config": true
   }
 }

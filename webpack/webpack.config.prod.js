@@ -49,7 +49,9 @@ module.exports = merge(common, {
     new ExtractTextPlugin({ filename: 'bundle.css' }),
     // compiling mode “scope hoisting”
     new Webpack.optimize.ModuleConcatenationPlugin(),
-
+    new Webpack.ProvidePlugin({
+      config: '~/../config.json'
+    })
   ],
   resolve: {
     alias: {

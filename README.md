@@ -1,6 +1,6 @@
 # React Starterkit
 
-A lightweight Starterkit including [React v16.2.0](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Stylus](http://stylus-lang.com/) and [Webpack v4](https://webpack.js.org/).
+A lightweight Starterkit including [React v16.3.2](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Styled Componets](https://www.styled-components.com/) and [Webpack v4](https://webpack.js.org/).
 (further: Babel, Eslint(Airbnb), Idx, Axios)
 
 ## Get the kit
@@ -18,7 +18,7 @@ $ npm install
 ## Development
 
 Builds the application and starts a webserver with hot loading.
-Runs on [localhost:3000](http://localhost:3000/)
+Runs on [localhost:3000](http://localhost:8080/)
 
 ```sh
 $ npm run start
@@ -33,7 +33,7 @@ $ npm run build
 ```
 
 ## Embed version
-Under [localhost:3000/index_iframe.html](http://localhost:3000/index_iframe.html) you will find a embed version of your for testing purposes.
+Under [localhost:3000/index_iframe.html](http://localhost:8080/index_iframe.html) you will find a embed version of your for testing purposes.
 
 ## Contribute
 
