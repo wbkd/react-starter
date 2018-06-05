@@ -4,14 +4,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const Path = require('path');
 
+const publicPath = process.env.BASENAME || '/';
+
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'cheap-eval-source-map',
   devServer: {
     contentBase: Path.resolve(__dirname, 'build'),
-    hot: true
+    hot: true,
+    compress: true,
+    publicPath,
+    historyApiFallback: true
   },
   plugins: [
+    new Webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: Path.resolve(__dirname, '../src/index.html')
@@ -23,10 +31,7 @@ module.exports = merge(common, {
       template: Path.resolve(__dirname, '../src/index_iframe.html')
     }),
     new Webpack.NamedModulesPlugin(),
-    new Webpack.HotModuleReplacementPlugin(),
-    new Webpack.ProvidePlugin({
-      config: '~/../config.json'
-    })
+    new Webpack.HotModuleReplacementPlugin()
   ],
 
   module: {
