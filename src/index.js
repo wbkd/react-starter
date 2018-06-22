@@ -5,6 +5,10 @@ import { Provider } from 'unistore/react';
 import { Store } from './Store';
 import App from './modules/App';
 
+import initStyle from './initStyle';
+
+initStyle();
+
 ReactDOM.render(
   <Provider store={Store}>
     <App />

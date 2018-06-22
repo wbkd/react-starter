@@ -3,9 +3,6 @@ import { connect } from 'unistore/react';
 import styled from 'styled-components';
 
 import { actions } from '~/Store';
-import initStyle from './AppStyle';
-
-initStyle();
 
 const AppWrapper = styled.div`
   height: 100%;
