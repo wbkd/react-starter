@@ -60,11 +60,9 @@
     "react": "^16.4.0",
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.4.0",
-    "react-redux": "^5.0.7",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.3.0",
     "styled-components": "^3.3.2",
-    "styled-normalize": "^4.0.0"
+    "styled-normalize": "^4.0.0",
+    "unistore": "^3.0.6"
   },
   "browserslist": {
     "development": [

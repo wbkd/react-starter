@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'unistore/react';
 import styled from 'styled-components';
 
-import * as AppActions from './AppState';
+import AppActions from './AppActions';
 import initStyle from './AppStyle';
 
 initStyle();
@@ -14,7 +14,7 @@ const AppWrapper = styled.div`
 
 class App extends PureComponent {
   componentDidMount() {
-    this.props.dispatch(AppActions.loadData());
+    this.props.loadData();
   }
 
   render() {
@@ -25,5 +25,6 @@ class App extends PureComponent {
 }
 
 export default connect(
-  state => state.AppState
+  state => state,
+  AppActions
 )(App);

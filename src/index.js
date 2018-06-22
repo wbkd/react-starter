@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider } from 'unistore/react';
 
-import Store from './redux/store';
+import Store from './Store';
 import App from './modules/App';
 
 if (module.hot) module.hot.accept();
