@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'unistore/react';
 import styled from 'styled-components';
 
-import AppActions from './AppActions';
+import { actions } from '~/Store';
 import initStyle from './AppStyle';
 
 initStyle();
@@ -26,5 +26,5 @@ class App extends PureComponent {
 
 export default connect(
   state => state,
-  AppActions
+  actions
 )(App);

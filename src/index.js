@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'unistore/react';
 
-import Store from './Store';
+import { Store } from './Store';
 import App from './modules/App';
-
-if (module.hot) module.hot.accept();
 
 ReactDOM.render(
   <Provider store={Store}>

@@ -1,6 +1,6 @@
 # React Starterkit
 
-A lightweight Starterkit including [React v16.4.0](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [Styled Componets](https://www.styled-components.com/) and [Webpack v4](https://webpack.js.org/).
+A lightweight Starterkit including [React v16.4.0](https://facebook.github.io/react/), [Unistore](https://www.npmjs.com/package/unistore), [Styled Componets](https://www.styled-components.com/) and [Webpack v4](https://webpack.js.org/).
 (further: Babel, Eslint(Airbnb), Idx, Axios)
 
 ## Get the kit
