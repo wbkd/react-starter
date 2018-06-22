@@ -15,9 +15,8 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
-    // copy data folder to make it available in redux loadData action
     new CopyWebpackPlugin([
-      { from: Path.resolve(__dirname, '../public/data'), to: 'data' }
+      { from: Path.resolve(__dirname, '../public'), to: 'public' }
     ]),
     new Webpack.ProvidePlugin({
       config: '~/../config.json'
