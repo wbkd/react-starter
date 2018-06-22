@@ -6,7 +6,10 @@ const Webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: [require.resolve('./polyfills'), Path.resolve(__dirname, '../src/index.js')],
+    app: [
+      require.resolve('./polyfills'),
+      Path.resolve(__dirname, '../src/index.js')
+    ],
     vendor: ['react', 'react-dom']
   },
   output: {

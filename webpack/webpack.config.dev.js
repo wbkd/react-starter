@@ -11,7 +11,6 @@ module.exports = merge(common, {
   devtool: 'cheap-eval-source-map',
   devServer: {
     contentBase: Path.resolve(__dirname, 'build'),
-    hot: true,
     compress: true,
     publicPath,
     historyApiFallback: true
@@ -29,9 +28,7 @@ module.exports = merge(common, {
       inject: false,
       filename: 'index_iframe.html',
       template: Path.resolve(__dirname, '../src/index_iframe.html')
-    }),
-    new Webpack.NamedModulesPlugin(),
-    new Webpack.HotModuleReplacementPlugin()
+    })
   ],
 
   module: {
