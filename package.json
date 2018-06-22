@@ -7,9 +7,7 @@
   "description": "lightweight react starterkit with webpack, redux, react-router",
   "scripts": {
     "build": "BABEL_ENV=production webpack --config webpack/webpack.config.prod.js  --colors",
-    "start": "webpack-dev-server --config  webpack/webpack.config.dev.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "webpack-dev-server --config  webpack/webpack.config.dev.js"
   },
   "repository": {
     "url": "git@github.com:wbkd/react-starter.git",
