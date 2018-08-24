@@ -9,7 +9,8 @@
     ],
     "react/prop-types": 0,
     "no-console": 0,
-    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
+    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+    "react/destructuring-assignment": 0
   },
   "env": {
     "browser": true

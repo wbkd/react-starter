@@ -1,5 +1,5 @@
 import createStore from 'unistore';
-import Axios from 'axios';
+import fetch from 'unfetch';
 
 export const Store = createStore({
   isLoading: true,
@@ -8,14 +8,12 @@ export const Store = createStore({
 
 export const actions = () => ({
   loadData: async () => {
-    let res = null;
+    let data = null;
     try {
-      res = await Axios.get('public/data/sample.json');
+      data = await fetch('public/data/sample.json').then(r => r.json());
     } catch (err) {
       console.log(err);
     }
-
-    const data = res.data || {};
     return { data, isLoading: false };
   }
 });

@@ -15,7 +15,13 @@ class App extends PureComponent {
   }
 
   render() {
-    return !this.props.isLoading && (
+    const { isLoading } = this.props;
+
+    if (isLoading) {
+      return 'Loading...';
+    }
+
+    return (
       <AppWrapper>
         <h1>react-starter</h1>
         <p>Lightweight React/Redux Starterkit - Webpack 4, Babel, Linting, Styled Components</p>
