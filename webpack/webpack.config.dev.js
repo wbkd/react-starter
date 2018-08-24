@@ -1,8 +1,8 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Webpack = require('webpack');
 const Path = require('path');
+const Webpack = require('webpack');
+const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const common = require('./webpack.common.js');
 
 const publicPath = process.env.BASENAME || '/';
 
@@ -36,7 +36,7 @@ module.exports = merge(common, {
       {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
-        enforce: "pre",
+        enforce: 'pre',
         loader: 'eslint-loader',
         options: {
           emitWarning: true,

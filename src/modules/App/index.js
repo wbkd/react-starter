@@ -16,7 +16,10 @@ class App extends PureComponent {
 
   render() {
     return !this.props.isLoading && (
-      <AppWrapper>Hello There!</AppWrapper>
+      <AppWrapper>
+        <h1>react-starter</h1>
+        <p>Lightweight React/Redux Starterkit - Webpack 4, Babel, Linting, Styled Components</p>
+      </AppWrapper>
     );
   }
 }

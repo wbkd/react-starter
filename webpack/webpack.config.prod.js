@@ -1,10 +1,11 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Webpack = require('webpack');
 const Path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Webpack = require('webpack');
+const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Autoprefixer = require('autoprefixer');
+
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -17,8 +18,8 @@ module.exports = merge(common, {
         default: false,
         commons: {
           test: /react/,
-          name: "vendor",
-          chunks: "initial",
+          name: 'vendor',
+          chunks: 'initial',
           minSize: 1,
           reuseExistingChunk: true
         }
@@ -45,8 +46,7 @@ module.exports = merge(common, {
         minifyURLs: true
       }
     }),
-    new ExtractTextPlugin({ filename: 'bundle.css' }),
-    // compiling mode “scope hoisting”
+    new MiniCssExtractPlugin({ filename: 'bundle.css' }),
     new Webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
@@ -63,21 +63,20 @@ module.exports = merge(common, {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract(Object.assign({
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-                ident: 'postcss',
-                plugins: () => [
-                  Autoprefixer
-                ]
-              }
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              ident: 'postcss',
+              plugins: () => [
+                Autoprefixer
+              ]
             }
-          ]
-        }))
+          }
+        ]
       }
     ]
   }

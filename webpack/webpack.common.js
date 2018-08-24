@@ -1,8 +1,7 @@
 const Path = require('path');
+const Webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const Autoprefixer = require('autoprefixer');
-const Webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -17,7 +16,7 @@ module.exports = {
     filename:  'js/[name].js'
   },
   plugins: [
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(['build'], { root: Path.resolve(__dirname, '..') }),
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../public'), to: 'public' }
     ]),
