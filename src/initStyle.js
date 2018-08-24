@@ -4,7 +4,7 @@ import { injectGlobal } from 'styled-components';
 export default () => injectGlobal`
   ${styledNormalize}
 
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,500,700");
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,500,700');
 
   * {
     box-sizing: border-box;
