@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'unistore/react';
 import styled from 'styled-components';
-
 import { actions } from '~/Store';
 
 const AppWrapper = styled.div`

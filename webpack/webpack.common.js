@@ -5,15 +5,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: [
-      require.resolve('./polyfills'),
-      Path.resolve(__dirname, '../src/index.js')
-    ],
-    vendor: ['react', 'react-dom']
+    app: Path.resolve(__dirname, '../src/index.js')
   },
   output: {
     path: Path.join(__dirname, '../build'),
-    filename:  'js/[name].js'
+    filename: 'js/[name].js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: false
+    }
   },
   plugins: [
     new CleanWebpackPlugin(['build'], { root: Path.resolve(__dirname, '..') }),

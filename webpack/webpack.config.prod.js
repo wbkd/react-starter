@@ -11,20 +11,10 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   stats: 'errors-only',
-  optimization: {
-    minimize: true,
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        commons: {
-          test: /react/,
-          name: 'vendor',
-          chunks: 'initial',
-          minSize: 1,
-          reuseExistingChunk: true
-        }
-      }
-    }
+  bail: true,
+  output: {
+    filename: 'js/[name].[chunkhash:8].js',
+    chunkFilename: 'js/[name].[chunkhash:8].chunk.js'
   },
   plugins: [
     new Webpack.DefinePlugin({
@@ -57,8 +47,8 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: 'babel-loader'
       },
       {

@@ -9,6 +9,9 @@ const publicPath = process.env.BASENAME || '/';
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-eval-source-map',
+  output: {
+    chunkFilename: 'js/[name].chunk.js'
+  },
   devServer: {
     contentBase: Path.resolve(__dirname, 'build'),
     compress: true,
@@ -43,7 +46,7 @@ module.exports = merge(common, {
         }
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         include: Path.resolve(__dirname, '../src'),
         loader: 'babel-loader'
       },

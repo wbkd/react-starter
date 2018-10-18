@@ -1,7 +1,12 @@
 {
   "presets": [
     "@babel/preset-react",
-    "@babel/preset-env"
+    [
+      "@babel/preset-env",
+      { 
+        "useBuiltIns": "entry"
+      }
+    ]
   ],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
@@ -9,9 +14,6 @@
   ],
   "env": {
     "production": {
-      "presets": [
-        "minify"
-      ],
       "plugins": [
         [
           "babel-plugin-styled-components",
