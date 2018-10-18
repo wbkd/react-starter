@@ -2,6 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -24,7 +25,8 @@ module.exports = {
     ]),
     new Webpack.ProvidePlugin({
       config: '~/../config.json'
-    })
+    }),
+    // new BundleAnalyzerPlugin()
   ],
   resolve: {
     alias: {

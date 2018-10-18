@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'unistore/react';
