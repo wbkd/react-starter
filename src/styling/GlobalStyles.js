@@ -1,10 +1,10 @@
 import styledNormalize from 'styled-normalize';
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export default () => injectGlobal`
+export default createGlobalStyle`
   ${styledNormalize}
 
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,500,700');
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
 
   * {
     box-sizing: border-box;
@@ -21,6 +21,7 @@ export default () => injectGlobal`
     position: relative;
     height: 100%;
     width: 100%;
-    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 `;
