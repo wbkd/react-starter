@@ -31,9 +31,6 @@ Builds a minified version of the application in the build folder.
 $ npm run build
 ```
 
-## Embed version
-Under [localhost:8080/index_iframe.html](http://localhost:8080/index_iframe.html) you will find a embed version of your for testing purposes.
-
 ## Contribute
 
 Feel free to dive in! [Open an issue](https://github.com/wbkd/react-starter/issues/new) or submit PRs.

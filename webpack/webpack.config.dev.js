@@ -1,7 +1,6 @@
 const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common.js');
 
 const publicPath = process.env.BASENAME || '/';
@@ -22,16 +21,6 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: Path.resolve(__dirname, '../src/index.html')
-    }),
-    new HtmlWebpackPlugin({
-      title: 'iframe testpage',
-      inject: false,
-      filename: 'index_iframe.html',
-      template: Path.resolve(__dirname, '../src/index_iframe.html')
-    })
   ],
 
   module: {

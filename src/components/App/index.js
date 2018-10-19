@@ -1,11 +1,20 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'unistore/react';
 import styled from 'styled-components';
-import { actions } from '~/Store';
+
+import { media } from '~/styles/Utils';
+import Actions from '~/state/Actions';
 
 const AppWrapper = styled.div`
-  height: 100%;
   position: relative;
+
+  ${media.m`
+    background: red;
+  `}
+
+  ${media.l`
+    background: blue;
+  `}
 `;
 
 class App extends PureComponent {
@@ -31,5 +40,5 @@ class App extends PureComponent {
 
 export default connect(
   state => state,
-  actions
+  Actions
 )(App);
