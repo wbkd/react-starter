@@ -1,5 +1,7 @@
 # React Starterkit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wbkd/react-starter.svg)](https://greenkeeper.io/)
+
 A lightweight Starterkit including [React](https://facebook.github.io/react/), [unistore](https://www.npmjs.com/package/unistore), [Styled Components](https://www.styled-components.com/) and [webpack v4](https://webpack.js.org/).
 
 ## Get the kit
