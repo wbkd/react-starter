@@ -68,6 +68,17 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        include: [
+          Path.resolve(__dirname, '../src'),
+          /**
+           * add ES6 modules that should be transpiled here. For example:
+           * Path.resolve(__dirname, '../node_modules/query-string'),
+           */
+        ],
+        loader: 'babel-loader'
       }
     ]
   }
