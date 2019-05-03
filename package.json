@@ -42,7 +42,7 @@
     "html-webpack-plugin": "^4.0.0-beta.5",
     "mini-css-extract-plugin": "^0.5.0",
     "postcss-loader": "^3.0.0",
-    "react-svg-loader": "^2.1.0",
+    "react-svg-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-bundle-analyzer": "^3.1.0",
