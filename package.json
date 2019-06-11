@@ -28,7 +28,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "clean-webpack-plugin": "^2.0.1",
     "copy-webpack-plugin": "^5.0.2",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-react-app": "^4.0.0",
