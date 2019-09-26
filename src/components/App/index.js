@@ -35,6 +35,6 @@ const App = ({ loadData, isLoading }) => {
 };
 
 export default connect(
-  state => state,
+  (state) => state,
   Actions
 )(App);

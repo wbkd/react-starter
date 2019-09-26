@@ -1,6 +1,6 @@
 import fetch from 'unfetch';
 
-const loadData = Store => async () => {
+const loadData = (Store) => async () => {
   Store.setState({ isLoading: true });
 
   let data = null;
@@ -13,6 +13,6 @@ const loadData = Store => async () => {
   return { data, isLoading: false };
 };
 
-export default Store => ({
+export default (Store) => ({
   loadData: loadData(Store)
 });
