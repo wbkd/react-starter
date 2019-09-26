@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'unistore/react';
 import styled from 'styled-components';
 
@@ -17,26 +17,22 @@ const AppWrapper = styled.div`
   `}
 `;
 
-class App extends PureComponent {
-  componentDidMount() {
-    this.props.loadData();
+const App = ({ loadData, isLoading }) => {
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  if (isLoading) {
+    return null;
   }
 
-  render() {
-    const { isLoading } = this.props;
-
-    if (isLoading) {
-      return 'Loading...';
-    }
-
-    return (
-      <AppWrapper>
-        <h1>react-starter</h1>
-        <p>Lightweight React/Redux Starterkit - Webpack 4, Babel, Linting, Styled Components</p>
-      </AppWrapper>
-    );
-  }
-}
+  return (
+    <AppWrapper>
+      <h1>react-starter</h1>
+      <p>Lightweight React/Redux Starterkit - Webpack 4, Babel, Linting, Styled Components</p>
+    </AppWrapper>
+  );
+};
 
 export default connect(
   state => state,
