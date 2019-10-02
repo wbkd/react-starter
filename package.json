@@ -46,7 +46,7 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.39.1",
     "webpack-bundle-analyzer": "^3.5.2",
-    "webpack-cli": "^3.3.6",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   },
