@@ -54,7 +54,7 @@
     "@babel/polyfill": "^7.6.0",
     "core-js": "^3.2.1",
     "react": "^16.10.2",
-    "react-dom": "^16.10.1",
+    "react-dom": "^16.10.2",
     "styled-components": "^4.4.0",
     "styled-normalize": "^8.0.6",
     "unfetch": "^4.1.0",
