@@ -51,7 +51,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
+    "@babel/polyfill": "^7.6.0",
     "core-js": "^3.2.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.1",
