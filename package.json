@@ -58,6 +58,6 @@
     "styled-components": "^4.4.0",
     "styled-normalize": "^8.0.6",
     "unfetch": "^4.1.0",
-    "unistore": "^3.4.1"
+    "unistore": "^3.5.0"
   }
 }
