@@ -54,7 +54,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "core-js": "^3.3.2",
-    "react": "^16.10.2",
+    "react": "^16.11.0",
     "react-dom": "^16.10.2",
     "styled-components": "^4.4.0",
     "styled-normalize": "^8.0.6",
