@@ -56,7 +56,7 @@
     "core-js": "^3.3.4",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "styled-components": "^4.4.0",
+    "styled-components": "^4.4.1",
     "styled-normalize": "^8.0.6",
     "unfetch": "^4.1.0",
     "unistore": "^3.5.0"
