@@ -2,7 +2,12 @@
 
 [![Dependabot badge](https://flat.badgen.net/dependabot/wbkd/react-starter?icon=dependabot)](https://dependabot.com/)
 
-A lightweight Starterkit including [React](https://facebook.github.io/react/), [unistore](https://www.npmjs.com/package/unistore), [Styled Components](https://www.styled-components.com/) and [webpack v4](https://webpack.js.org/).
+**A lightweight starting point for your react projects including:**
+
+* [React](https://facebook.github.io/react/)
+* [easy-peasy](https://easy-peasy.now.sh/)
+* [Styled Components](https://www.styled-components.com/)
+* [webpack](https://webpack.js.org/)
 
 ## Get the kit
 
