@@ -4,10 +4,10 @@
 
 **A lightweight starting point for your react projects including:**
 
-* [React](https://facebook.github.io/react/)
+* [react](https://facebook.github.io/react/)
 * [easy-peasy](https://easy-peasy.now.sh/)
-* [Styled Components](https://www.styled-components.com/)
-* [webpack](https://webpack.js.org/)
+* [styled-components](https://www.styled-components.com/)
+* [rebass](https://rebassjs.org/)
 
 ## Get the kit
 
