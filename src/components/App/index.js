@@ -1,40 +1,18 @@
-import React, { useEffect } from 'react';
-import { connect } from 'unistore/react';
-import styled from 'styled-components';
+import React from 'react';
+import { useStoreActions, useStoreState } from 'easy-peasy';
+import { Button, Box } from 'rebass/styled-components';
 
-import { media } from '~/styles/Utils';
-import Actions from '~/state/Actions';
-
-const AppWrapper = styled.div`
-  position: relative;
-
-  ${media.m`
-    background: red;
-  `}
-
-  ${media.l`
-    background: blue;
-  `}
-`;
-
-const App = ({ loadData, isLoading }) => {
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  if (isLoading) {
-    return null;
-  }
+const App = () => {
+  const loadData = useStoreActions(actions => actions.data.loadData);
+  const isLoading = useStoreState(state => state.data.isLoading);
+  const data = useStoreState(state => state.data.data);
 
   return (
-    <AppWrapper>
-      <h1>react-starter</h1>
-      <p>Lightweight React/Redux Starterkit - Webpack 4, Babel, Linting, Styled Components</p>
-    </AppWrapper>
+    <Box>
+      <Button onClick={loadData}>Load Data</Button>
+      {isLoading ? 'loading...' : `data.length: ${data.length}`}
+    </Box>
   );
 };
 
-export default connect(
-  (state) => state,
-  Actions
-)(App);
+export default App;

@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'unistore/react';
+import { StoreProvider } from 'easy-peasy';
 
 import Store from '~/state/Store';
-import App from '~/components/App';
-import GlobalStyles from '~/styles/Global';
-
-const root = document.createElement('div');
+import Root from '~/containers/Root';
 
 ReactDOM.render(
-  <Provider store={Store}>
-    <>
-      <GlobalStyles />
-      <App />
-    </>
-  </Provider>,
-  root
+  <StoreProvider store={Store}>
+    <Root />
+  </StoreProvider>,
+  document.getElementById('root')
 );
-
-document.body.appendChild(root);
