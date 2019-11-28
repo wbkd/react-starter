@@ -1,8 +1,7 @@
-import createStore from 'unistore';
+import { createStore } from 'easy-peasy';
 
-const Store = createStore({
-  isLoading: true,
-  data: false
-});
+import StoreModel from './models';
+
+const Store = createStore(StoreModel);
 
 export default Store;
