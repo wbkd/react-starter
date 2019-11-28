@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "plugins": ["prettier"],
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "airbnb/hooks", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-param-reassign": 0,

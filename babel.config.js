@@ -1,4 +1,4 @@
-module.exports = (api) => {
+module.exports = api => {
   api.cache(true);
 
   const presets = [
@@ -7,16 +7,12 @@ module.exports = (api) => {
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: 3
-      }
-    ]
+        corejs: 3,
+      },
+    ],
   ];
 
-  const plugins = [
-    '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-proposal-class-properties',
-    'babel-plugin-styled-components'
-  ];
+  const plugins = ['babel-plugin-styled-components'];
 
   const env = {
     production: {
@@ -24,16 +20,16 @@ module.exports = (api) => {
         [
           'babel-plugin-styled-components',
           {
-            displayName: false
-          }
-        ]
-      ]
-    }
+            displayName: false,
+          },
+        ],
+      ],
+    },
   };
 
   return {
     presets,
     plugins,
-    env
+    env,
   };
 };
