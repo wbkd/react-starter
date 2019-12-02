@@ -41,7 +41,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-loader": "^3.0.0",
     "react-svg-loader": "^3.0.3",
-    "style-loader": "^1.0.0",
+    "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
