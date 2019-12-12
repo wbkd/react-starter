@@ -5,6 +5,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-param-reassign": 0,
+    "react/prop-types": 0,
     "prettier/prettier": "error"
   },
   "env": {
