@@ -10,7 +10,7 @@ const App = () => {
   const data = useStoreState(state => state.data.data);
 
   return (
-    <Box>
+    <Box p={2}>
       <Button onClick={loadData}>Load Data</Button>
       <DataDisplay isLoading={isLoading} data={data} />
     </Box>
