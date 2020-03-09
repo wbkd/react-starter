@@ -52,7 +52,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
     "@rebass/preset": "^4.0.5",
     "core-js": "^3.6.4",
     "easy-peasy": "^3.3.0",
