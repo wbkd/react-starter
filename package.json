@@ -54,7 +54,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@rebass/preset": "^4.0.5",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
     "easy-peasy": "^3.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
