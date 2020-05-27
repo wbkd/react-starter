@@ -1,4 +1,4 @@
-module.exports = api => {
+module.exports = (api) => {
   api.cache(true);
 
   const presets = [
@@ -21,6 +21,12 @@ module.exports = api => {
           'babel-plugin-styled-components',
           {
             displayName: false,
+          },
+        ],
+        [
+          'transform-react-remove-prop-types',
+          {
+            removeImport: true,
           },
         ],
       ],
