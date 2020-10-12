@@ -1,9 +1,9 @@
 const Path = require('path');
 const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const publicPath = process.env.BASENAME || '/';
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -13,26 +13,34 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: Path.resolve(__dirname, 'build'),
-    compress: true,
-    publicPath,
     historyApiFallback: true,
+    hot: true,
   },
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
+    new ReactRefreshWebpackPlugin(),
   ],
-
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         include: Path.resolve(__dirname, '../src'),
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        options: {
-          emitWarning: true,
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['react-refresh/babel'],
+            },
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              emitWarning: true,
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,

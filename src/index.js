@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { StoreProvider } from 'easy-peasy';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'emotion-theming';
 
-import Store from '~/state/Store';
-import GlobalStyle from '~/style/GlobalStyle';
-import defaultTheme from '~/style/themes/default';
-import App from '~/containers/App';
+import store from 'store';
+import theme from 'style/theme';
 
-ReactDOM.render(
-  <StoreProvider store={Store}>
-    <ThemeProvider theme={defaultTheme}>
-      <>
+import NormalizeStyle from 'style/normalize';
+import GlobalStyle from 'style/global';
+import App from 'components/App';
+
+const AppWrapper = () => {
+  return (
+    <StoreProvider store={store}>
+      <ThemeProvider theme={theme}>
+        <NormalizeStyle />
         <GlobalStyle />
         <App />
-      </>
-    </ThemeProvider>
-  </StoreProvider>,
-  document.getElementById('root')
-);
+      </ThemeProvider>
+    </StoreProvider>
+  );
+};
+
+ReactDOM.render(<AppWrapper />, document.getElementById('root'));

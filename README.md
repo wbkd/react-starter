@@ -6,7 +6,7 @@
 
 - [react](https://facebook.github.io/react/)
 - [easy-peasy](https://easy-peasy.now.sh/)
-- [styled-components](https://www.styled-components.com/)
+- [emotion](https://emotion.sh/docs/styled)
 - [rebass](https://rebassjs.org/)
 
 ## Get the kit

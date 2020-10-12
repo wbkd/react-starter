@@ -1,11 +1,8 @@
 const Path = require('path');
-const Webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
-const Config = require('../config.json');
 
 module.exports = {
   entry: {
@@ -24,22 +21,16 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
-      patterns: [{ from: Path.resolve(__dirname, '../public'), to: 'public' }],
-    }),
-    new Webpack.ProvidePlugin({
-      config: '~/../config.json',
+      patterns: [{ from: Path.resolve(__dirname, '../static'), to: 'static' }],
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: Path.resolve(__dirname, '../src/index.html'),
-      meta: Config.meta,
     }),
     // new BundleAnalyzerPlugin()
   ],
   resolve: {
-    alias: {
-      '~': Path.resolve(__dirname, '../src'),
-    },
+    modules: [Path.resolve(__dirname, '../src'), Path.resolve(__dirname, '../node_modules')],
   },
   module: {
     rules: [
@@ -68,17 +59,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.(js|jsx)$/,
-        include: [
-          Path.resolve(__dirname, '../src'),
-          /**
-           * add ES6 modules that should be transpiled here. For example:
-           * Path.resolve(__dirname, '../node_modules/query-string'),
-           */
-        ],
-        loader: 'babel-loader',
       },
     ],
   },

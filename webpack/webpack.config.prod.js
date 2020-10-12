@@ -1,4 +1,3 @@
-const Path = require('path');
 const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -19,13 +18,7 @@ module.exports = merge(common, {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new MiniCssExtractPlugin({ filename: 'bundle.css' }),
-    new Webpack.optimize.ModuleConcatenationPlugin(),
   ],
-  resolve: {
-    alias: {
-      '~': Path.resolve(__dirname, '../src'),
-    },
-  },
   module: {
     rules: [
       {
@@ -42,6 +35,17 @@ module.exports = merge(common, {
             },
           },
         ],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        include: [
+          Path.resolve(__dirname, '../src'),
+          /**
+           * add ES6 modules that should be transpiled here. For example:
+           * Path.resolve(__dirname, '../node_modules/query-string'),
+           */
+        ],
+        loader: 'babel-loader',
       },
     ],
   },
