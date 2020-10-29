@@ -1,18 +1,17 @@
 import { createStore, thunk, action } from 'easy-peasy';
-import fetch from 'unfetch';
+import { fetchJson } from 'utils/data-utils';
 
 const model = {
   app: {
     data: null,
     dataLoading: false,
     loadData: thunk(async (actions) => {
-      try {
-        actions.loadDataStart();
-        const response = await fetch('static/data/data.json');
-        const data = await response.json();
+      actions.loadDataStart();
+      const data = await fetchJson('static/data/data.json');
+      if (data) {
         actions.loadDataSuccess(data);
-      } catch (_) {
-        actions.loadDataFail(_);
+      } else {
+        actions.loadDataFail();
       }
     }),
     loadDataStart: action((state) => {
