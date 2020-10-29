@@ -1,8 +1,8 @@
-const Path = require('path');
 const Webpack = require('webpack');
+const Path = require('path');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Autoprefixer = require('autoprefixer');
+const postcssPresetEnv = require('postcss-preset-env');
 
 const common = require('./webpack.common.js');
 
@@ -19,13 +19,7 @@ module.exports = merge(common, {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new MiniCssExtractPlugin({ filename: 'bundle.css' }),
-    new Webpack.optimize.ModuleConcatenationPlugin(),
   ],
-  resolve: {
-    alias: {
-      '~': Path.resolve(__dirname, '../src'),
-    },
-  },
   module: {
     rules: [
       {
@@ -37,11 +31,23 @@ module.exports = merge(common, {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              ident: 'postcss',
-              plugins: () => [Autoprefixer],
+              postcssOptions: {
+                plugins: [postcssPresetEnv],
+              },
             },
           },
         ],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        include: [
+          Path.resolve(__dirname, '../src'),
+          /**
+           * add ES6 modules that should be transpiled here. For example:
+           * Path.resolve(__dirname, '../node_modules/query-string'),
+           */
+        ],
+        loader: 'babel-loader',
       },
     ],
   },

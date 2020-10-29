@@ -12,30 +12,10 @@ module.exports = (api) => {
     ],
   ];
 
-  const plugins = ['babel-plugin-styled-components'];
-
-  const env = {
-    production: {
-      plugins: [
-        [
-          'babel-plugin-styled-components',
-          {
-            displayName: false,
-          },
-        ],
-        [
-          'transform-react-remove-prop-types',
-          {
-            removeImport: true,
-          },
-        ],
-      ],
-    },
-  };
+  const plugins = [];
 
   return {
     presets,
     plugins,
-    env,
   };
 };
