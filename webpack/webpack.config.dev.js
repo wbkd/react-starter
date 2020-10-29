@@ -15,6 +15,7 @@ module.exports = merge(common, {
     contentBase: Path.resolve(__dirname, 'build'),
     historyApiFallback: true,
     hot: true,
+    host: '0.0.0.0',
   },
   plugins: [
     new Webpack.DefinePlugin({

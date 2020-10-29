@@ -3,7 +3,7 @@
   "config": {
     "appname": "my-app-name"
   },
-  "version": "6.0.1",
+  "version": "7.0.0",
   "description": "lightweight react starterkit including webpack, unistore, styled components",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.config.dev.js",
@@ -59,12 +59,14 @@
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "core-js": "^3.6.5",
+    "d3-dsv": "^2.0.0",
     "easy-peasy": "^3.3.1",
     "emotion-normalize": "^10.1.0",
     "emotion-theming": "^10.0.27",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rebass": "^4.0.7",
+    "topojson-client": "^3.1.0",
     "unfetch": "^4.2.0"
   }
 }
