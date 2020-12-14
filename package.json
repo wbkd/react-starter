@@ -62,7 +62,7 @@
     "d3-dsv": "^2.0.0",
     "easy-peasy": "^4.0.1",
     "emotion-normalize": "^10.1.0",
-    "emotion-theming": "^10.0.27",
+    "emotion-theming": "^11.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rebass": "^4.0.7",
