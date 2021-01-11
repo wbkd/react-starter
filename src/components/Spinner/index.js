@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
-import { Box } from 'rebass';
+import { keyframes } from '@emotion/react';
 
 const Bounce = keyframes`
   0%, 100% { -webkit-transform: scale(0.0) }
   50% { -webkit-transform: scale(1.0) }
 `;
 
-const Loader = styled(Box)`
+const Loader = styled.div`
   width: ${(p) => p.size || 50}px;
   height: ${(p) => p.size || 50}px;
   position: relative;

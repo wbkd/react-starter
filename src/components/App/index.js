@@ -1,9 +1,12 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
-import { Box } from 'rebass';
-import Button from 'components/Button';
 import Spinner from 'components/Spinner';
+
+const Wrapper = styled.div`
+  padding: 20px;
+`;
 
 const App = () => {
   const data = useStoreState((state) => state.app.data);
@@ -11,11 +14,11 @@ const App = () => {
   const loadData = useStoreActions((actions) => actions.app.loadData);
 
   return (
-    <Box p={2}>
+    <Wrapper>
       <h1>React Starterkit</h1>
       {dataLoading && <Spinner />}
-      {data ? data.length : <Button onClick={loadData}>load data</Button>}
-    </Box>
+      {data ? data.length : <button onClick={loadData}>load data</button>}
+    </Wrapper>
   );
 };
 

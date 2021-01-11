@@ -9,7 +9,6 @@ The starterkit is based on these libraries:
 - [react](https://facebook.github.io/react/)
 - [easy-peasy](https://easy-peasy.now.sh/)
 - [emotion](https://emotion.sh/docs/styled)
-- [rebass](https://rebassjs.org/)
 
 ## Getting started
 

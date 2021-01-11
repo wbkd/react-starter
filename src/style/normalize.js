@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
 
 const NormalizeStyle = memo(() => {
