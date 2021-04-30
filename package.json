@@ -63,7 +63,7 @@
     "easy-peasy": "^4.0.1",
     "emotion-normalize": "^11.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "topojson-client": "^3.1.0",
     "unfetch": "^4.2.0"
   }
