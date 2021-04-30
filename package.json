@@ -46,7 +46,7 @@
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
-    "react-refresh": "^0.9.0",
+    "react-refresh": "^0.10.0",
     "react-svg-loader": "^3.0.3",
     "style-loader": "^2.0.0",
     "webpack": "^5.12.3",
