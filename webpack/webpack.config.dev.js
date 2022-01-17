@@ -2,6 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -12,12 +13,12 @@ module.exports = merge(common, {
     chunkFilename: 'js/[name].chunk.js',
   },
   devServer: {
-    contentBase: Path.resolve(__dirname, 'build'),
     historyApiFallback: true,
     hot: true,
     host: '0.0.0.0',
   },
   plugins: [
+    new ESLintPlugin({ quiet: true }),
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
@@ -33,12 +34,6 @@ module.exports = merge(common, {
             loader: 'babel-loader',
             options: {
               plugins: ['react-refresh/babel'],
-            },
-          },
-          {
-            loader: 'eslint-loader',
-            options: {
-              emitWarning: true,
             },
           },
         ],

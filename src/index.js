@@ -10,14 +10,16 @@ import NormalizeStyle from 'style/normalize';
 import GlobalStyle from 'style/global';
 import App from 'components/App';
 
-const AppWrapper = () => (
-  <StoreProvider store={store}>
-    <ThemeProvider theme={theme}>
-      <NormalizeStyle />
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
-  </StoreProvider>
-);
+function AppWrapper() {
+  return (
+    <StoreProvider store={store}>
+      <ThemeProvider theme={theme}>
+        <NormalizeStyle />
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </StoreProvider>
+  );
+}
 
 ReactDOM.render(<AppWrapper />, document.getElementById('root'));
