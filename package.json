@@ -44,7 +44,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.1",
     "postcss-loader": "^6.2.1",
-    "postcss-preset-env": "^7.2.3",
+    "postcss-preset-env": "^9.3.0",
     "prettier": "^2.5.1",
     "react-refresh": "^0.11.0",
     "react-svg-loader": "^3.0.3",
